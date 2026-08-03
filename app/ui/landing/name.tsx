@@ -14,6 +14,8 @@ export default function Name() {
     let gabriel = SplitText.create(".gabriel", { type: "words, chars" });
     let manciu = SplitText.create(".manciu", { type: "words, chars" });
     let role = SplitText.create(".role", { type: "words" });
+    let location = SplitText.create(".location", { type: "words" });
+    let music = SplitText.create(".music", { type: "words" });
 
     gsap
       .timeline()
@@ -45,10 +47,32 @@ export default function Name() {
           ease: "back.inOut(2)",
         },
         "-=0.7",
+      )
+      .from(
+        music.words,
+        {
+          yPercent: 100,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.05,
+          ease: "back.inOut(2)",
+        },
+        "-=1",
+      )
+      .from(
+        location.words,
+        {
+          yPercent: 100,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.05,
+          ease: "back.inOut(2)",
+        },
+        "-=1",
       );
   });
   return (
-    <>
+    <div className="relative flex h-dvh w-dvw flex-col items-center justify-center">
       <div className={`${styles.name} relative`}>
         <h1
           className={`${styles.name__h1} z-1 text-center leading-[.9] font-bold uppercase`}
@@ -71,10 +95,19 @@ export default function Name() {
         ></div>
       </div>
       <span
-        className={`${styles.role} role inline-block overflow-hidden bg-linear-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent lowercase`}
+        className={`${styles.role} role inline-block overflow-hidden bg-linear-to-r from-blue-300 to-blue-400 bg-clip-text text-center text-transparent lowercase`}
       >
         Développeur frontend junior
       </span>
-    </>
+      <div className="bottom absolute bottom-0 flex w-full justify-between p-8">
+        <span className="music inline-block overflow-hidden font-sans text-base">
+          Écouté récemment :{" "}
+          <span className="text-blue-300">Titre • Artiste</span>
+        </span>
+        <span className="location inline-block overflow-hidden font-sans text-base">
+          Basé à <span className="text-blue-300">Dinant</span>, Belgique
+        </span>
+      </div>
+    </div>
   );
 }
