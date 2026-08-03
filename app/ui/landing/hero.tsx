@@ -1,11 +1,11 @@
 "use client";
 
-import styles from "./name.module.scss";
+import styles from "./hero.module.scss";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 
-export default function Name() {
+export default function Hero() {
   gsap.registerPlugin(useGSAP);
   gsap.registerPlugin(SplitText);
 
