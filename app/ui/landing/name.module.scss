@@ -1,0 +1,52 @@
+.left,
+.right {
+  display: inline-block;
+  transition: all 0.5s cubic-bezier(0.7, -0.4, 0.4, 1.4);
+}
+
+.left,
+.right {
+  div {
+    transition: font-weight 0.3s cubic-bezier(0.66, 0, 0.34, 1);
+
+    &:hover {
+      font-weight: 300;
+    }
+  }
+}
+
+.image {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.7, -0.4, 0.4, 1.4);
+  background-image: url("/images/landing/portrait.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.name {
+  &__h1 {
+    font-family: var(--font-clash-display);
+    font-size: clamp(4rem, 2.9286rem + 5.3571vw, 7.75rem);
+  }
+
+  &:hover {
+    .name__h1 {
+      .left {
+        transform: translateX(-6vw);
+      }
+
+      .right {
+        transform: translateX(4vw);
+      }
+    }
+
+    .image {
+      opacity: 1;
+    }
+  }
+}
+
+.role {
+  font-family: var(--font-lexend);
+  font-size: clamp(1rem, 0.8929rem + 0.5357vw, 1.375rem);
+}
