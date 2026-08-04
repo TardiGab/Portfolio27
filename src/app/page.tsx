@@ -2,11 +2,15 @@
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Hero from "./components/landing/hero/hero";
+import Hero from "./components/landing/Hero/hero";
 
 export default function Home() {
   useGSAP(() => {
     // gsap code here...
+    gsap.from(".background", {
+      opacity: 0,
+      duration: 1,
+    });
   });
 
   return (
