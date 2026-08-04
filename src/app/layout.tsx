@@ -10,7 +10,7 @@ const lexend = Lexend({
 });
 
 const clashDisplay = ClashDisplay({
-  src: "./fonts/ClashDisplay-Variable.ttf",
+  src: "./fonts/ClashDisplay-Variable.woff2",
   display: "swap",
   variable: "--font-clash-display",
 });

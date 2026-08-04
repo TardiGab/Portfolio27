@@ -5,7 +5,13 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 
-export default function Hero() {
+export default function Hero({
+  className,
+  id,
+}: {
+  className?: string;
+  id?: string;
+}) {
   gsap.registerPlugin(useGSAP);
   gsap.registerPlugin(SplitText);
 
@@ -15,7 +21,7 @@ export default function Hero() {
     let manciu = SplitText.create(".manciu", { type: "words, chars" });
     let role = SplitText.create(".role", { type: "words" });
     let location = SplitText.create(".location", { type: "words" });
-    let music = SplitText.create(".music", { type: "words" });
+    let coords = SplitText.create(".coords", { type: "words" });
 
     gsap
       .timeline()
@@ -49,7 +55,7 @@ export default function Hero() {
         "-=0.7",
       )
       .from(
-        music.words,
+        coords.words,
         {
           yPercent: 100,
           opacity: 0,
@@ -72,7 +78,10 @@ export default function Hero() {
       );
   });
   return (
-    <div className="relative flex h-dvh w-dvw flex-col items-center justify-center">
+    <div
+      id={id}
+      className={`relative flex h-dvh w-dvw flex-col items-center justify-center ${className || ""}`}
+    >
       <div className={`${styles.name} relative`}>
         <h1
           className={`${styles.name__h1} z-1 text-center leading-[.9] font-bold uppercase`}
@@ -100,13 +109,19 @@ export default function Hero() {
         Développeur frontend junior
       </span>
       <div className="bottom absolute bottom-0 flex w-full justify-between p-8">
-        <span className="music inline-block overflow-hidden font-sans text-base">
-          Écouté récemment :{" "}
-          <span className="text-blue-300">Titre • Artiste</span>
-        </span>
-        <span className="location inline-block overflow-hidden font-sans text-base">
+        <span
+          className={`location inline-block overflow-hidden font-sans text-base`}
+        >
           Basé à <span className="text-blue-300">Dinant</span>, Belgique
         </span>
+        <a
+          href="https://maps.app.goo.gl/SAcuGtGvVvqohwzb7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${styles.coordinates} coords relative inline-block overflow-hidden font-sans text-base`}
+        >
+          <span className="inline-block">50°15′42″N, 4°54′48″E</span>
+        </a>
       </div>
     </div>
   );
