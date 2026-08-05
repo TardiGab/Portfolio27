@@ -1,0 +1,28 @@
+.button {
+  span {
+    transition: transform 0.5s cubic-bezier(.8, 0, 0, .8);
+  }
+
+  &::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--color-primary);
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(.8, 0, 0, .8);
+    font-size: 1em;
+  }
+
+  &:hover {
+    &::after {
+      transform: translateY(0);
+    }
+
+    span {
+      transform: translateY(-100%);
+    }
+  }
+}

@@ -85,7 +85,7 @@ export default function Hero({
     >
       <div className={`${styles.name} relative`}>
         <h1
-          className={`${styles.name__h1} z-1 text-center leading-[.9] font-bold uppercase`}
+          className={`${styles.name__h1} z-1 text-center leading-[.8] font-bold uppercase`}
           aria-label="Gabriel Manciu"
           role="heading"
         >
