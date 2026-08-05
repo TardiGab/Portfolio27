@@ -1,30 +1,80 @@
 import styles from "./navigation.module.scss";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useState } from "react";
 
-export function RollingButton({
-  label,
-  className,
-}: {
-  label: string;
-  className?: string;
-}) {
+export function RollingButton({ className }: { className?: string }) {
+  const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => {
     // gsap code here...
-    gsap.to(".nav", {
-      width: "100vw",
-      duration: 0.5,
-      ease: "power2.inOut",
-    });
+    const nextOpen = !isOpen;
+    setIsOpen(nextOpen);
+    console.log("isOpen", nextOpen);
+    if (nextOpen) {
+      gsap
+        .timeline()
+        .to(".nav-element", {
+          yPercent: 100,
+        })
+        .to(
+          ".nav",
+          {
+            width: "56rem",
+            duration: 0.5,
+            ease: "back.inOut(1)",
+          },
+          "-=0.5",
+        )
+        .to(".nav", {
+          height: "auto",
+          duration: 0.5,
+          ease: "back.inOut(1)",
+        })
+        .to(
+          ".nav-element",
+          {
+            opacity: 1,
+            yPercent: 0,
+            duration: 0.8,
+            ease: "back.inOut(1)",
+          },
+          "-=0.7",
+        );
+    } else {
+      gsap
+        .timeline()
+        .to(".nav", {
+          height: "50px",
+          duration: 0.5,
+          ease: "back.inOut(1)",
+        })
+        .to(
+          ".nav-element",
+          {
+            opacity: 1,
+            yPercent: 100,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "back.inOut(1)",
+          },
+          "-=0.5",
+        )
+        .to(".nav", {
+          width: "36rem",
+          duration: 0.5,
+          ease: "back.inOut(1)",
+        });
+    }
   };
 
   return (
     <button
       className={`${styles.button} ${className || ""}`}
-      data-label={label}
+      data-label={isOpen ? "Fermer" : "Menu"}
+      aria-expanded={isOpen}
       onClick={openMenu}
     >
-      <span className="inline-block">{label}</span>
+      <span className="inline-block">{isOpen ? "Fermer" : "Menu"}</span>
     </button>
   );
 }
@@ -32,18 +82,54 @@ export function RollingButton({
 export default function Navigation({ className }: { className?: string }) {
   return (
     <div
-      className={`nav fixed top-8 left-1/2 z-50 flex w-sm max-w-sm -translate-x-1/2 items-center justify-between rounded-4xl border border-blue-950 bg-black p-3 sm:w-1/2 ${className || ""}`}
+      className={`${styles.container} nav fixed top-8 left-1/2 z-50 flex w-xs -translate-x-1/2 flex-col items-center justify-between rounded-3xl border border-blue-950 bg-black p-3 sm:w-xl ${className || ""} overflow-hidden`}
     >
-      <div className="left flex items-center gap-1">
-        <img src="/images/logo.svg" alt="Logo" height={16} />
-        <span>Gabriel Manciu</span>
+      <div className="flex w-full items-center justify-between gap-2">
+        <div className="left flex items-center gap-1">
+          <img src="/images/logo.svg" alt="Logo" height={16} />
+          <span>Gabriel Manciu</span>
+        </div>
+        <div className="flex">
+          <RollingButton className="relative inline-block cursor-pointer overflow-hidden" />
+        </div>
       </div>
-      <div className="flex">
-        <RollingButton
-          label="Menu"
-          className="relative inline-block cursor-pointer overflow-hidden"
-        />
-      </div>
+      <nav className={`${styles.nav} nav-element w-full`}>
+        <ul className="flex flex-col justify-center gap-4 pt-4 text-xs sm:flex-row sm:items-end">
+          <li className="w-full">
+            <a
+              href="#about"
+              className="flex flex-col rounded-2xl border border-red-700 bg-red-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
+            >
+              <span className="font-display text-2xl font-medium uppercase">
+                Projets
+              </span>{" "}
+              <span className="opacity-80">Ce dont je suis fier</span>
+            </a>
+          </li>
+          <li className="w-full">
+            <a
+              href="#projects"
+              className="flex flex-col rounded-2xl border border-blue-700 bg-blue-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
+            >
+              <span className="font-display text-2xl font-medium uppercase">
+                À propos
+              </span>{" "}
+              <span className="opacity-80">Apprenez à me connaître</span>
+            </a>
+          </li>
+          <li className="w-full">
+            <a
+              href="#contact"
+              className="flex flex-col rounded-2xl border border-green-700 bg-green-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
+            >
+              <span className="font-display text-2xl font-medium uppercase">
+                Contact
+              </span>{" "}
+              <span className="opacity-80">Discutons ensemble</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
