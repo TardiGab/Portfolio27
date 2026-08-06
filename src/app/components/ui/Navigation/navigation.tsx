@@ -20,7 +20,7 @@ export function RollingButton({ className }: { className?: string }) {
           gsap
             .timeline()
             .to(".nav-element ul li", {
-              yPercent: 100,
+              yPercent: isDesktop ? 100 : 200,
             })
             .to(
               ".nav-panel",
@@ -46,7 +46,7 @@ export function RollingButton({ className }: { className?: string }) {
                   each: isDesktop ? 0.03 : 0.05,
                   from: isMobile ? "end" : "start",
                 },
-                ease: isDesktop ? "back.inOut(1.5)" : "none",
+                ease: isDesktop ? "back.inOut(1.5)" : "back.inOut(.5)",
               },
               "-=0.5",
             );
@@ -71,13 +71,13 @@ export function RollingButton({ className }: { className?: string }) {
               ".nav-element ul li",
               {
                 opacity: isDesktop ? 0 : 1,
-                yPercent: isDesktop ? 100 : 0,
+                yPercent: isDesktop ? 100 : 200,
                 duration: 0.5,
                 stagger: {
                   each: isDesktop ? 0.03 : 0.05,
                   from: "end",
                 },
-                ease: isDesktop ? "back.inOut(1.5)" : "none",
+                ease: isDesktop ? "back.inOut(1.5)" : "back.inOut(.5)",
               },
               "-=0.5",
             )
