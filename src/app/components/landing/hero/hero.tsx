@@ -109,7 +109,7 @@ export default function Hero({
       >
         Développeur frontend junior
       </span>
-      <div className="bottom absolute bottom-0 flex w-full justify-between p-8">
+      <div className="bottom absolute bottom-0 flex w-full flex-col justify-between gap-2 p-8 sm:flex-row">
         <span
           className={`location inline-block overflow-hidden font-sans text-base`}
         >
