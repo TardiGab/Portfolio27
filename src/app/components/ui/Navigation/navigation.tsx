@@ -27,14 +27,14 @@ export function RollingButton({ className }: { className?: string }) {
               {
                 width: isDesktop ? "40vw" : "95vw",
                 duration: 0.5,
-                ease: isDesktop ? "back.inOut(1)" : "back.inOut(.5)",
+                ease: "back.inOut(1)",
               },
               "-=0.5",
             )
             .to(".nav-panel", {
               height: "auto",
               duration: 0.5,
-              ease: isDesktop ? "back.inOut(1)" : "back.inOut(.5)",
+              ease: "back.inOut(1)",
             })
             .to(
               ".nav-element ul li",
@@ -65,7 +65,7 @@ export function RollingButton({ className }: { className?: string }) {
             .to(".nav-panel", {
               height: "50px",
               duration: 0.5,
-              ease: isDesktop ? "back.inOut(1)" : "back.inOut(.5)",
+              ease: "back.inOut(1)",
             })
             .to(
               ".nav-element ul li",
@@ -84,7 +84,7 @@ export function RollingButton({ className }: { className?: string }) {
             .to(".nav-panel", {
               width: isDesktop ? "20vw" : "70vw",
               duration: 0.5,
-              ease: isDesktop ? "back.inOut(1)" : "back.inOut(.5)",
+              ease: "back.inOut(1)",
             });
         },
       );
