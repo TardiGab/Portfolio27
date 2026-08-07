@@ -12,11 +12,12 @@ export function RollingButton({ className }: { className?: string }) {
     if (nextOpen) {
       mm.add(
         {
-          isDesktop: "(min-width: 768px)",
+          isDesktop: "(min-width: 1025px)",
           isMobile: "(max-width: 767px)",
+          isTablet: "(min-width: 768px) and (max-width: 1024px)",
         },
         (context) => {
-          const { isDesktop, isMobile } = context.conditions ?? {};
+          const { isDesktop, isMobile, isTablet } = context.conditions ?? {};
           gsap
             .timeline()
             .to(".nav-element ul li", {
@@ -55,11 +56,12 @@ export function RollingButton({ className }: { className?: string }) {
     } else {
       mm.add(
         {
-          isDesktop: "(min-width: 768px)",
+          isDesktop: "(min-width: 1025px)",
           isMobile: "(max-width: 767px)",
+          isTablet: "(min-width: 768px) and (max-width: 1024px)",
         },
         (context) => {
-          const { isDesktop, isMobile } = context.conditions ?? {};
+          const { isDesktop, isMobile, isTablet } = context.conditions ?? {};
           gsap
             .timeline()
             .to(".nav-panel", {
@@ -106,7 +108,7 @@ export function RollingButton({ className }: { className?: string }) {
 export default function Navigation({ className }: { className?: string }) {
   return (
     <div
-      className={`fixed top-8 left-1/2 z-50 -translate-x-1/2 ${className || ""}`}
+      className={`fixed top-8 left-1/2 z-50 origin-center -translate-x-1/2 ${className || ""}`}
     >
       <div
         className={`${styles.container} nav-panel flex w-[70vw] flex-col items-center justify-between overflow-hidden rounded-3xl border border-blue-950 bg-black p-3 sm:w-[50vw] md:w-[20vw]`}

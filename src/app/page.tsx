@@ -17,6 +17,8 @@ export default function Home() {
       opacity: 0,
       duration: 1,
       ease: "back.inOut(2)",
+      // Deletes all inline styles applied by GSAP after the animation completes
+      clearProps: "all",
     });
   });
 
