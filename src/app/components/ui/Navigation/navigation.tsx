@@ -1,5 +1,6 @@
 import styles from "./navigation.module.scss";
 import gsap from "gsap";
+import Image from "next/image";
 import { useState } from "react";
 
 export function RollingButton({ className }: { className?: string }) {
@@ -9,15 +10,18 @@ export function RollingButton({ className }: { className?: string }) {
     const nextOpen = !isOpen;
     setIsOpen(nextOpen);
     const mm = gsap.matchMedia();
+    console.log("nextOpen", nextOpen);
     if (nextOpen) {
       mm.add(
         {
-          isDesktop: "(min-width: 1025px)",
+          isLargeDesktop: "(min-width: 1280px)",
+          isDesktop: "(min-width: 1024px) and (max-width: 1279px)",
           isMobile: "(max-width: 767px)",
           isTablet: "(min-width: 768px) and (max-width: 1024px)",
         },
         (context) => {
-          const { isDesktop, isMobile, isTablet } = context.conditions ?? {};
+          const { isDesktop, isMobile, isTablet, isLargeDesktop } =
+            context.conditions ?? {};
           gsap
             .timeline()
             .to(".nav-element ul li", {
@@ -26,7 +30,13 @@ export function RollingButton({ className }: { className?: string }) {
             .to(
               ".nav-panel",
               {
-                width: isDesktop ? "40vw" : "95vw",
+                width: isLargeDesktop
+                  ? "40vw"
+                  : isDesktop
+                    ? "70vw"
+                    : isTablet
+                      ? "90vw"
+                      : "90vw",
                 duration: 0.5,
                 ease: "back.inOut(1)",
               },
@@ -56,12 +66,14 @@ export function RollingButton({ className }: { className?: string }) {
     } else {
       mm.add(
         {
-          isDesktop: "(min-width: 1025px)",
+          isLargeDesktop: "(min-width: 1280px)",
+          isDesktop: "(min-width: 1024px) and (max-width: 1279px)",
           isMobile: "(max-width: 767px)",
           isTablet: "(min-width: 768px) and (max-width: 1024px)",
         },
         (context) => {
-          const { isDesktop, isMobile, isTablet } = context.conditions ?? {};
+          const { isDesktop, isMobile, isTablet, isLargeDesktop } =
+            context.conditions ?? {};
           gsap
             .timeline()
             .to(".nav-panel", {
@@ -84,7 +96,13 @@ export function RollingButton({ className }: { className?: string }) {
               "-=0.5",
             )
             .to(".nav-panel", {
-              width: isDesktop ? "20vw" : "70vw",
+              width: isLargeDesktop
+                ? "20vw"
+                : isDesktop
+                  ? "50vw"
+                  : isTablet
+                    ? "50vw"
+                    : "70vw",
               duration: 0.5,
               ease: "back.inOut(1)",
             });
@@ -111,11 +129,11 @@ export default function Navigation({ className }: { className?: string }) {
       className={`fixed top-8 left-1/2 z-50 origin-center -translate-x-1/2 ${className || ""}`}
     >
       <div
-        className={`${styles.container} nav-panel flex w-[70vw] flex-col items-center justify-between overflow-hidden rounded-3xl border border-blue-950 bg-black p-3 sm:w-[50vw] md:w-[20vw]`}
+        className={`${styles.container} nav-panel flex w-[70vw] flex-col items-center justify-between overflow-hidden rounded-3xl border border-blue-950 bg-black p-3 sm:w-[50vw] md:w-[50vw] lg:w-[50vw] xl:w-[20vw]`}
       >
         <div className="flex w-full items-center justify-between gap-2">
           <div className="left flex items-center gap-1">
-            <img src="/images/logo.svg" alt="Logo" height={16} />
+            <Image src="/images/logo.svg" alt="Logo" height={22} width={48} />
             <span className="hidden sm:inline">Gabriel Manciu</span>
           </div>
           <div className="flex">
