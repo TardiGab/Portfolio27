@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./navigation.module.scss";
 import gsap from "gsap";
 import Image from "next/image";
@@ -6,11 +8,9 @@ import { useState } from "react";
 export function RollingButton({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => {
-    // gsap code here...
     const nextOpen = !isOpen;
     setIsOpen(nextOpen);
     const mm = gsap.matchMedia();
-    console.log("nextOpen", nextOpen);
     if (nextOpen) {
       mm.add(
         {
@@ -25,7 +25,7 @@ export function RollingButton({ className }: { className?: string }) {
           gsap
             .timeline()
             .to(".nav-element ul li", {
-              yPercent: isDesktop ? 100 : 200,
+              yPercent: isDesktop ? 100 : 300,
             })
             .to(
               ".nav-panel",
@@ -42,11 +42,15 @@ export function RollingButton({ className }: { className?: string }) {
               },
               "-=0.5",
             )
-            .to(".nav-panel", {
-              height: "auto",
-              duration: 0.5,
-              ease: "back.inOut(1)",
-            })
+            .to(
+              ".nav-panel",
+              {
+                height: "auto",
+                duration: 0.5,
+                ease: "back.inOut(1)",
+              },
+              "-=0.2",
+            )
             .to(
               ".nav-element ul li",
               {
@@ -59,7 +63,7 @@ export function RollingButton({ className }: { className?: string }) {
                 },
                 ease: isDesktop ? "back.inOut(1.5)" : "back.inOut(.5)",
               },
-              "-=0.5",
+              isDesktop ? "-=0.3" : "-=0.6",
             );
         },
       );
@@ -85,7 +89,7 @@ export function RollingButton({ className }: { className?: string }) {
               ".nav-element ul li",
               {
                 opacity: isDesktop ? 0 : 1,
-                yPercent: isDesktop ? 100 : 200,
+                yPercent: isDesktop ? 100 : 300,
                 duration: 0.5,
                 stagger: {
                   each: isDesktop ? 0.03 : 0.05,
@@ -95,17 +99,21 @@ export function RollingButton({ className }: { className?: string }) {
               },
               "-=0.5",
             )
-            .to(".nav-panel", {
-              width: isLargeDesktop
-                ? "20vw"
-                : isDesktop
-                  ? "50vw"
-                  : isTablet
+            .to(
+              ".nav-panel",
+              {
+                width: isLargeDesktop
+                  ? "20vw"
+                  : isDesktop
                     ? "50vw"
-                    : "70vw",
-              duration: 0.5,
-              ease: "back.inOut(1)",
-            });
+                    : isTablet
+                      ? "50vw"
+                      : "70vw",
+                duration: 0.5,
+                ease: "back.inOut(1)",
+              },
+              "-=0.2",
+            );
         },
       );
     }
