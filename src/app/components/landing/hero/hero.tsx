@@ -85,7 +85,7 @@ export default function Hero({
     >
       <div className={`${styles.name} relative`}>
         <h1
-          className={`${styles.name__h1} z-1 text-center leading-[.9] font-bold uppercase`}
+          className={`${styles.name__h1} z-1 text-center leading-[.8] font-bold uppercase`}
           aria-label="Gabriel Manciu"
           role="heading"
         >
@@ -101,15 +101,15 @@ export default function Hero({
           </span>
         </h1>
         <div
-          className={`${styles.image} pointer-events-none absolute top-[50%] left-[50%] z-0 h-full w-[10vw] -translate-x-1/2 -translate-y-1/2 transform rounded-2xl`}
+          className={`${styles.image} pointer-events-none absolute top-[50%] left-[50%] z-0 h-full w-[40vw] -translate-x-1/2 -translate-y-full transform rounded-2xl sm:w-[10vw] sm:-translate-y-1/2`}
         ></div>
       </div>
       <span
-        className={`${styles.role} role inline-block overflow-hidden bg-linear-to-r from-blue-300 to-blue-400 bg-clip-text text-center text-transparent lowercase`}
+        className={`${styles.role} role inline-block overflow-hidden text-center text-blue-300 lowercase`}
       >
         Développeur frontend junior
       </span>
-      <div className="bottom absolute bottom-0 flex w-full justify-between p-8">
+      <div className="bottom absolute bottom-0 flex w-full flex-col justify-between gap-2 p-8 sm:flex-row">
         <span
           className={`location inline-block overflow-hidden font-sans text-base`}
         >

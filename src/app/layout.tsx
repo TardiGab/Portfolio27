@@ -28,10 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="fr"
       className={`h-full antialiased ${clashDisplay.variable} ${lexend.variable}`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

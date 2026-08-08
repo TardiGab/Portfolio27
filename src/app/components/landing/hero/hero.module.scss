@@ -1,7 +1,7 @@
 .left,
 .right {
   display: inline-block;
-  transition: all 0.5s cubic-bezier(0.7, -0.4, 0.4, 1.4);
+  transition: transform 0.5s cubic-bezier(0.7, -0.4, 0.4, 1.4);
 }
 
 .left,
@@ -39,6 +39,16 @@
 
       .right {
         transform: translateX(4vw);
+      }
+
+      @media (max-width: 768px) {
+        .left {
+          transform: translateY(-30vw);
+        }
+
+        .right {
+          transform: translateX(0);
+        }
       }
     }
 
