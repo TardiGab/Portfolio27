@@ -29,7 +29,7 @@ export default function Home() {
         end: "top top",
         toggleActions: "play none none reverse",
       },
-      background:
+      backgroundImage:
         "radial-gradient(75% 15% at 50% 100%, #6B0000 0%, #0F0000 100%)",
     });
 

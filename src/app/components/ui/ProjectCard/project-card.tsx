@@ -100,7 +100,7 @@ export default function ProjectCard({
           alt={title || "Project Title"}
           width={1500}
           height={1300}
-          className="h-auto w-full object-cover"
+          className="h-auto w-full object-fill"
         />
       </div>
       <div>
