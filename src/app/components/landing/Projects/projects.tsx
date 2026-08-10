@@ -50,7 +50,7 @@ export default function Projects({
         className={`${styles.title} title font-display sticky top-28 inline-block overflow-hidden text-2xl leading-[.9] font-medium tracking-tight uppercase`}
         id={id || "projects"}
       >
-        Mes petites fiertés
+        Mes fiertés
       </h2>
       <div className="projects-container sticky top-1/4">
         <ProjectCard
