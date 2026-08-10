@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ProjectCard from "../../ui/ProjectCard/project-card";
 
 export default function Projects({ className }: { className?: string }) {
   gsap.registerPlugin(useGSAP);
@@ -10,14 +11,12 @@ export default function Projects({ className }: { className?: string }) {
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
-    // gsap code here...
-    let title = SplitText.create(".title", { type: "words, chars" });
+    let title = SplitText.create(".title", { type: "words" });
 
     gsap.from(title.words, {
       scrollTrigger: {
         trigger: ".title",
         start: "top 90%",
-        markers: true,
       },
       yPercent: 100,
       opacity: 0,
@@ -34,6 +33,64 @@ export default function Projects({ className }: { className?: string }) {
       >
         Mes petites fiertés
       </h2>
+      <div className="projects-container sticky">
+        <ProjectCard
+          title="Reins"
+          description="Réalisé dans le cadre de mon Travail de Fin d’Études, Reins est un tracker de montures pour World of Warcraft exploitant l’API officielle de Blizzard. L’enjeu était de concevoir un outil immersif, doté d'une interface sur-mesure qui reprend fidèlement les codes visuels du jeu. Développé avec Nuxt, Neon, BetterAuth et SASS."
+          year={2026}
+          projectType="Web app"
+          image="/images/landing/projects/reins.webp"
+          link="/projects/reins"
+        />
+        <ProjectCard
+          title="Projet 1"
+          description="Description du projet 1"
+          year={2026}
+          projectType="Web app"
+          image="/images/landing/projects/reins.webp"
+          link="/projects/projet1"
+        />
+        <ProjectCard
+          title="Projet 1"
+          description="Description du projet 1"
+          year={2026}
+          projectType="Web app"
+          image="/images/landing/projects/reins.webp"
+          link="/projects/projet1"
+        />
+        <ProjectCard
+          title="Projet 1"
+          description="Description du projet 1"
+          year={2026}
+          projectType="Web app"
+          image="/images/landing/projects/reins.webp"
+          link="/projects/projet1"
+        />
+        <ProjectCard
+          title="Projet 1"
+          description="Description du projet 1"
+          year={2026}
+          projectType="Web app"
+          image="/images/landing/projects/reins.webp"
+          link="/projects/projet1"
+        />
+        <ProjectCard
+          title="Projet 1"
+          description="Description du projet 1"
+          year={2026}
+          projectType="Web app"
+          image="/images/landing/projects/reins.webp"
+          link="/projects/projet1"
+        />
+        <ProjectCard
+          title="Projet 1"
+          description="Description du projet 1"
+          year={2026}
+          projectType="Web app"
+          image="/images/landing/projects/reins.webp"
+          link="/projects/projet1"
+        />
+      </div>
     </section>
   );
 }
