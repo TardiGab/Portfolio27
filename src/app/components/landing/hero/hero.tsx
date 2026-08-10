@@ -81,7 +81,7 @@ export default function Hero({
   return (
     <div
       id={id}
-      className={`relative flex h-dvh w-dvw flex-col items-center justify-center ${className || ""}`}
+      className={`relative flex h-dvh flex-col items-center justify-center ${className || ""}`}
     >
       <div className={`${styles.name} relative`}>
         <h1
