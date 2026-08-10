@@ -1,0 +1,38 @@
+.h3 {
+  font-size: clamp(2rem, 1.625rem + 1.25vw, 2.75rem);
+}
+
+.year,
+.desc,
+.type {
+  font-size: clamp(1rem, 0.8125rem + 0.625vw, 1.375rem);
+}
+
+.cursor {
+  background: url("/text-ring.svg") no-repeat center center;
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+  // transform: scale(0);
+}
+
+.card {
+  border: 0px solid transparent;
+  cursor: none;
+
+
+  img {
+    transition: transform 0.5s cubic-bezier(0.45, 1.45, 0.8, 1);
+  }
+
+  &:hover {
+    border: 1px solid #5A1518;
+
+    img {
+      transform: scale(1.02);
+    }
+  }
+}

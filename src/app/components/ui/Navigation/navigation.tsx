@@ -134,14 +134,20 @@ export function RollingButton({ className }: { className?: string }) {
 export default function Navigation({ className }: { className?: string }) {
   return (
     <div
-      className={`fixed top-8 left-1/2 z-50 origin-center -translate-x-1/2 ${className || ""}`}
+      className={`fixed top-8 left-1/2 z-50 origin-center -translate-x-1/2 rounded-3xl border border-blue-950 bg-black ${className || ""}`}
     >
       <div
-        className={`${styles.container} nav-panel flex w-[70vw] flex-col items-center justify-between overflow-hidden rounded-3xl border border-blue-950 bg-black p-3 sm:w-[50vw] md:w-[50vw] lg:w-[50vw] xl:w-[20vw]`}
+        className={`${styles.container} nav-panel flex w-[70vw] flex-col items-center justify-between overflow-hidden p-3 sm:w-[50vw] md:w-[50vw] lg:w-[50vw] xl:w-[20vw]`}
       >
         <div className="flex w-full items-center justify-between gap-2">
           <div className="left flex items-center gap-1">
-            <Image src="/images/logo.svg" alt="Logo" height={22} width={48} />
+            <Image
+              src="/images/logo.svg"
+              alt="Logo"
+              height={22}
+              width={48}
+              fetchPriority="high"
+            />
             <span className="hidden sm:inline">Gabriel Manciu</span>
           </div>
           <div className="flex">
@@ -152,7 +158,7 @@ export default function Navigation({ className }: { className?: string }) {
           <ul className="flex flex-col justify-center gap-2 pt-4 text-xs sm:flex-row sm:items-end">
             <li className="w-full">
               <a
-                href="#about"
+                href="#projects"
                 className="flex flex-col rounded-2xl border border-red-700 bg-red-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
               >
                 <span className="font-display text-2xl font-medium uppercase">
@@ -163,7 +169,7 @@ export default function Navigation({ className }: { className?: string }) {
             </li>
             <li className="w-full">
               <a
-                href="#projects"
+                href="#about"
                 className="flex flex-col rounded-2xl border border-blue-700 bg-blue-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
               >
                 <span className="font-display text-2xl font-medium uppercase">
