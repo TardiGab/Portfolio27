@@ -25,7 +25,7 @@ export default function Home() {
     gsap.to(".background", {
       scrollTrigger: {
         trigger: ".projects",
-        start: "top 10%",
+        start: "top 30%",
         end: "top top",
         toggleActions: "play none none reverse",
       },
@@ -36,12 +36,11 @@ export default function Home() {
     gsap.to(".navigation", {
       scrollTrigger: {
         trigger: ".projects",
-        start: "top 10%",
+        start: "top 30%",
         end: "top top",
         toggleActions: "play none none reverse",
-        // markers: true,
       },
-      border: "51x solid #460809",
+      border: "1px solid #460809",
     });
   });
 

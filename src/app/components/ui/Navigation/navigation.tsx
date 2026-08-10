@@ -158,7 +158,7 @@ export default function Navigation({ className }: { className?: string }) {
           <ul className="flex flex-col justify-center gap-2 pt-4 text-xs sm:flex-row sm:items-end">
             <li className="w-full">
               <a
-                href="#about"
+                href="#projects"
                 className="flex flex-col rounded-2xl border border-red-700 bg-red-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
               >
                 <span className="font-display text-2xl font-medium uppercase">
@@ -169,7 +169,7 @@ export default function Navigation({ className }: { className?: string }) {
             </li>
             <li className="w-full">
               <a
-                href="#projects"
+                href="#about"
                 className="flex flex-col rounded-2xl border border-blue-700 bg-blue-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
               >
                 <span className="font-display text-2xl font-medium uppercase">

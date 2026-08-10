@@ -5,7 +5,13 @@ import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProjectCard from "../../ui/ProjectCard/project-card";
 
-export default function Projects({ className }: { className?: string }) {
+export default function Projects({
+  className,
+  id,
+}: {
+  className?: string;
+  id?: string;
+}) {
   gsap.registerPlugin(useGSAP);
   gsap.registerPlugin(SplitText);
   gsap.registerPlugin(ScrollTrigger);
@@ -24,16 +30,28 @@ export default function Projects({ className }: { className?: string }) {
       stagger: 0.05,
       ease: "back.inOut(2)",
     });
+
+    gsap.from(".projects-container", {
+      scrollTrigger: {
+        trigger: ".projects-container",
+        start: "top 50%",
+        toggleActions: "play none none reverse",
+      },
+      opacity: 0,
+      yPercent: 5,
+      duration: 0.5,
+      ease: "back.inOut(2)",
+    });
   });
 
   return (
-    <section className={`${className} min-h-[200vh] p-4 sm:p-28`}>
+    <section id={id} className={`${className} min-h-[200vh] p-4 sm:p-28`}>
       <h2
         className={`${styles.title} title font-display sticky top-28 inline-block overflow-hidden text-2xl leading-[.9] font-medium tracking-tight uppercase`}
       >
         Mes petites fiertés
       </h2>
-      <div className="projects-container sticky">
+      <div className="projects-container sticky top-1/4">
         <ProjectCard
           title="Reins"
           description="Réalisé dans le cadre de mon Travail de Fin d’Études, Reins est un tracker de montures pour World of Warcraft exploitant l’API officielle de Blizzard. L’enjeu était de concevoir un outil immersif, doté d'une interface sur-mesure qui reprend fidèlement les codes visuels du jeu. Développé avec Nuxt, Neon, BetterAuth et SASS."
@@ -41,54 +59,7 @@ export default function Projects({ className }: { className?: string }) {
           projectType="Web app"
           image="/images/landing/projects/reins.webp"
           link="/projects/reins"
-        />
-        <ProjectCard
-          title="Projet 1"
-          description="Description du projet 1"
-          year={2026}
-          projectType="Web app"
-          image="/images/landing/projects/reins.webp"
-          link="/projects/projet1"
-        />
-        <ProjectCard
-          title="Projet 1"
-          description="Description du projet 1"
-          year={2026}
-          projectType="Web app"
-          image="/images/landing/projects/reins.webp"
-          link="/projects/projet1"
-        />
-        <ProjectCard
-          title="Projet 1"
-          description="Description du projet 1"
-          year={2026}
-          projectType="Web app"
-          image="/images/landing/projects/reins.webp"
-          link="/projects/projet1"
-        />
-        <ProjectCard
-          title="Projet 1"
-          description="Description du projet 1"
-          year={2026}
-          projectType="Web app"
-          image="/images/landing/projects/reins.webp"
-          link="/projects/projet1"
-        />
-        <ProjectCard
-          title="Projet 1"
-          description="Description du projet 1"
-          year={2026}
-          projectType="Web app"
-          image="/images/landing/projects/reins.webp"
-          link="/projects/projet1"
-        />
-        <ProjectCard
-          title="Projet 1"
-          description="Description du projet 1"
-          year={2026}
-          projectType="Web app"
-          image="/images/landing/projects/reins.webp"
-          link="/projects/projet1"
+          className="project-card"
         />
       </div>
     </section>

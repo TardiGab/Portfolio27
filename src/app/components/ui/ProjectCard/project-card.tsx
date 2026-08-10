@@ -4,6 +4,10 @@ import Image from "next/image";
 import styles from "./project-card.module.scss";
 import { useRef } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectCard({
   className,
@@ -24,6 +28,15 @@ export default function ProjectCard({
 }) {
   const cursor = useRef<HTMLDivElement>(null);
   const card = useRef<HTMLAnchorElement>(null);
+
+  useGSAP(() => {
+    gsap.to(".know-more-cursor", {
+      rotation: -360,
+      repeat: -1,
+      duration: 15,
+      ease: "linear",
+    });
+  });
 
   function handleMouseMove(e: React.MouseEvent<HTMLAnchorElement>) {
     if (!card.current || !cursor.current) {
@@ -70,7 +83,7 @@ export default function ProjectCard({
 
   return (
     <a
-      className={`${className || ""} ${styles.card} sticky top-1/5 mb-4 grid grid-cols-1 gap-6 rounded-4xl bg-[#0F0000] p-4 transition-colors duration-300 hover:bg-[#350F13] md:grid-cols-2`}
+      className={`${className || ""} ${styles.card} sticky top-1/4 mb-4 grid grid-cols-1 gap-6 rounded-4xl bg-[#0F0000] p-4 transition-colors duration-300 hover:bg-[#350F13] md:grid-cols-2`}
       href={link || "#"}
       ref={card}
       onMouseEnter={handleMouseEnter}
