@@ -59,7 +59,7 @@ export default function Projects({
           year={2026}
           projectType="Web app"
           image="/images/landing/projects/reins.webp"
-          link="/projects/reins"
+          link="/case/reins"
           className="project-card"
         />
       </div>

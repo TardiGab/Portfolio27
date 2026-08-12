@@ -16,7 +16,10 @@ const clashDisplay = ClashDisplay({
 });
 
 export const metadata: Metadata = {
-  title: "Gabriel Manciu • Développeur Frontend Junior",
+  title: {
+    default: "Gabriel Manciu • Développeur Frontend Junior",
+    template: "%s | Gabriel Manciu • Développeur Frontend Junior",
+  },
   description:
     "Explorez mon portfolio et découvrez mes projets en tant que développeur frontend junior. Je transforme des maquettes créatives en expériences web soignées.",
 };
