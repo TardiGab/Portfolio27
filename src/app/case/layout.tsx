@@ -1,8 +1,14 @@
+import Navigation from "../components/ui/Navigation/navigation";
+
 export default function CaseLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  console.log(children);
-  return <main className="case h-full">{children}</main>;
+  return (
+    <main className="case h-full">
+      <Navigation />
+      {children}
+    </main>
+  );
 }
