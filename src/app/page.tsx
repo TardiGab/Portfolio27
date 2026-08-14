@@ -46,8 +46,15 @@ export default function Home() {
 
   return (
     <>
-      <Hero className="relative z-10" />
-      <Projects className="projects relative z-10" />
+      <header>
+        <Navigation className="navigation" />
+      </header>
+      <main className="relative">
+        <div className="background fixed top-0 left-0 z-0 h-screen w-full"></div>
+        <Hero className="relative z-10" />
+        <Projects className="projects relative z-10" />
+      </main>
+      <footer></footer>
     </>
   );
 }
