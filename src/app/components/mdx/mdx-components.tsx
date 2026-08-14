@@ -1,6 +1,12 @@
 import type { MDXComponents } from "mdx/types";
 import styles from "./mdx-components.module.scss";
 
+import RollingLink from "../ui/RollingLink/rolling-link";
+import ArrowRight from "../icons/arrow-right";
+import ArrowOutwards from "../icons/arrow-outwards";
+import ArrowBack from "../icons/arrow-back";
+import Image from "next/image";
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: (props) => (
@@ -27,5 +33,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     li: (props) => <li className={` ${styles.li} mb-2 text-lg`} {...props} />,
 
     ...components,
+    RollingLink: (props) => <RollingLink {...props} />,
+    ArrowRight: (props) => <ArrowRight {...props} />,
+    ArrowOutwards: (props) => <ArrowOutwards {...props} />,
+    ArrowBack: (props) => <ArrowBack {...props} />,
+    Image: (props) => (
+      <Image width={1920} height={1080} {...props} className="rounded-lg" />
+    ),
   };
 }

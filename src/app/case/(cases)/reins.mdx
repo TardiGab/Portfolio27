@@ -42,6 +42,27 @@ En plus de pouvoir voir leur collection, les utilisateurs peuvent également la 
 
 {/* Image seule */}
 
+<figure className="mt-8 mb-8 w-full">
+  <Image
+    src="/images/case/reins/reins.webp"
+    alt="Comparaison de collections entre deux utilisateurs"
+    className="w-full rounded-lg"
+    width={1920}
+    height={1080}
+  />
+  <figcaption className="mt-2 text-sm text-gray-500">
+    <RollingLink
+      label="Lien vers la comparaison en cours"
+      href="https://reins.manciu.be/compare-result?region=eu&realm=confr%C3%A9rie-du-thorium&character=Grumir&cregion=EU&crealm=confr%C3%A9rie-du-thorium&ccharacter=Rallena"
+      target="_blank"
+      arrow="outwards"
+      iconPosition="right"
+      className="main-size font-sans"
+      color="white"
+    />
+  </figcaption>
+</figure>
+
 Chaque monture dispose de sa page dédiée, où sont présentées les manières de l'obtenir dans le jeu. Ces pages sont rédigées manuellement car ce sont des informations qui ne peuvent pas être automatiquement récupérées. Si une monture n'a pas encore de guide, les utilisateurs peuvent en proposer un grâce à l’intégration de Nuxt Content.
 
 {/* Deux images côte à côte */}

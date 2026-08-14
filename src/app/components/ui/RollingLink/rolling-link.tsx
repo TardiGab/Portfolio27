@@ -42,13 +42,16 @@
 
 import Link from "next/link";
 import styles from "./rolling-link.module.scss";
+import ArrowRight from "../../icons/arrow-right";
+import ArrowBack from "../../icons/arrow-back";
+import ArrowOutwards from "../../icons/arrow-outwards";
 
 export default function RollingLink({
   href,
   label,
   className,
   target,
-  icon,
+  arrow,
   iconPosition = "right",
   color,
 }: {
@@ -56,18 +59,35 @@ export default function RollingLink({
   label: string;
   className?: string;
   target?: string;
-  icon?: React.ReactNode;
+  arrow?: string;
   iconPosition?: "left" | "right";
   color?: string;
 }) {
+  const renderIcon = (icon: string) => {
+    switch (icon) {
+      case "right":
+        return <ArrowRight size="1em" />;
+      case "back":
+        return <ArrowBack size="1em" />;
+      case "outwards":
+        return <ArrowOutwards size="1em" />;
+      default:
+        return null;
+    }
+  };
+
   const content = (
-    <span className="inline-flex items-center">
-      {iconPosition === "left" && icon && (
-        <span className="mr-2 inline-flex items-center">{icon}</span>
+    <span className="inline-flex items-center leading-[1.2]">
+      {iconPosition === "left" && arrow && (
+        <span className="mr-2 inline-flex items-center">
+          {renderIcon(arrow)}
+        </span>
       )}
-      <span>{label}</span>
-      {iconPosition === "right" && icon && (
-        <span className="ml-2 inline-flex items-center">{icon}</span>
+      <span className="">{label}</span>
+      {iconPosition === "right" && arrow && (
+        <span className="ml-2 inline-flex items-center">
+          {renderIcon(arrow)}
+        </span>
       )}
     </span>
   );

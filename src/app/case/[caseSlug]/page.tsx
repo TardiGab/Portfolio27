@@ -115,7 +115,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               label="Voir le projet"
               href={data.frontmatter.link}
               target="_blank"
-              icon={<ArrowOutwards size={"1em"} />}
+              arrow="outwards"
               iconPosition="right"
               className={`${styles.case__cta} font-display leading-none font-medium uppercase *:text-blue-300`}
               color="var(--color-blue-300)"
@@ -124,7 +124,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               label="Retour"
               href={data.frontmatter.link}
               target="_blank"
-              icon={<ArrowBack size={"1em"} />}
+              arrow="back"
               iconPosition="right"
               className={`${styles.case__cta} font-display leading-none font-medium text-neutral-50 uppercase`}
               color="var(--color-neutral-50)"
