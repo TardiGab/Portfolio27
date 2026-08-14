@@ -3,6 +3,8 @@ import "./globals.css";
 import { Lexend } from "next/font/google";
 import ClashDisplay from "next/font/local";
 
+import Navigation from "./components/ui/Navigation/navigation";
+
 const lexend = Lexend({
   subsets: ["latin"],
   display: "swap",
@@ -34,7 +36,16 @@ export default function RootLayout({
       lang="fr"
       className={`h-full antialiased ${clashDisplay.variable} ${lexend.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <header>
+          <Navigation className="navigation" />
+        </header>
+        <main className="relative z-10">
+          <div className="background fixed top-0 left-0 z-0 h-screen w-full"></div>
+          <div className="relative z-10">{children}</div>
+        </main>
+        <footer></footer>
+      </body>
     </html>
   );
 }

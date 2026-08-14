@@ -131,7 +131,26 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         </div>
       </div>
-      <div className={`${styles.case__content}`}>{data.content}</div>
+      <div className={`${styles.case__content} mb-20`}>{data.content}</div>
+      <div className="flex flex-col items-start gap-4">
+        <RollingLink
+          label="Voir le projet"
+          href={data.frontmatter.link}
+          target="_blank"
+          arrow="outwards"
+          iconPosition="right"
+          className={`${styles.case__cta} font-display font-medium uppercase *:text-blue-300 *:**:leading-none *:**:text-nowrap`}
+          color="var(--color-blue-300)"
+        />
+        <RollingLink
+          label="Retour"
+          href="/"
+          arrow="back"
+          iconPosition="right"
+          className={`${styles.case__cta} font-display font-medium text-neutral-50 uppercase *:**:leading-none *:**:text-nowrap`}
+          color="var(--color-neutral-50)"
+        />
+      </div>
     </article>
   );
 }
