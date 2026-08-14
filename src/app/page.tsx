@@ -1,7 +1,3 @@
-// "use client";
-
-// import gsap from "gsap";
-// import { useGSAP } from "@gsap/react";
 import Hero from "./components/landing/Hero/hero";
 import Navigation from "./components/ui/Navigation/navigation";
 import Projects from "./components/landing/Projects/projects";

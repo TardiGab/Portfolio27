@@ -5,8 +5,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ProjectCard from "../../ui/ProjectCard/project-card";
-import ProjectsList from "../../ui/ProjectsList/projects-list";
 
 export default function Projects({
   className,
