@@ -68,7 +68,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           height={600}
         />
         <div className="flex flex-row justify-between text-left">
-          <div className="flex flex-col gap-8 text-left lg:flex-row">
+          <div className="flex flex-col flex-wrap gap-8 text-left xl:flex-row">
             <div>
               <h3
                 className={`${styles.case__infosTitle} font-display mb-4 leading-none font-medium text-neutral-300 uppercase`}
@@ -117,16 +117,15 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               target="_blank"
               arrow="outwards"
               iconPosition="right"
-              className={`${styles.case__cta} font-display leading-none font-medium uppercase *:text-blue-300`}
+              className={`${styles.case__cta} font-display font-medium uppercase *:text-blue-300 *:**:leading-none *:**:text-nowrap`}
               color="var(--color-blue-300)"
             />
             <RollingLink
               label="Retour"
-              href={data.frontmatter.link}
-              target="_blank"
+              href="/"
               arrow="back"
               iconPosition="right"
-              className={`${styles.case__cta} font-display leading-none font-medium text-neutral-50 uppercase`}
+              className={`${styles.case__cta} font-display font-medium text-neutral-50 uppercase *:**:leading-none *:**:text-nowrap`}
               color="var(--color-neutral-50)"
             />
           </div>
