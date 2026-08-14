@@ -2,15 +2,9 @@ import { promises as fs } from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
 
-import ProjectsCard from "@/src/app/components/ui/ProjectCard/project-card";
+import type { MDXType } from "@/src/types/mdx";
 
-interface MDXType {
-  title: string;
-  description: string;
-  year: number;
-  projectType: string;
-  tags: string[];
-}
+import ProjectsCard from "@/src/app/components/ui/ProjectCard/project-card";
 
 export default async function Projects() {
   const fileNames = await fs.readdir(
@@ -38,23 +32,21 @@ export default async function Projects() {
     }),
   );
   return (
-    <div>
-      <ul>
-        {projects.map((project) => {
-          return (
-            <li key={project.slug}>
-              <ProjectsCard
-                title={project.title}
-                description={project.description}
-                year={project.year}
-                projectType={project.projectType}
-                link={`/case/${project.slug}`}
-                image={`/images/case/${project.slug}/${project.slug}.webp`}
-              />
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <ul>
+      {projects.map((project) => {
+        return (
+          <li key={project.slug}>
+            <ProjectsCard
+              title={project.title}
+              description={project.description}
+              year={project.year}
+              projectType={project.projectType}
+              link={`/case/${project.slug}`}
+              image={`/images/case/${project.slug}/${project.slug}.webp`}
+            />
+          </li>
+        );
+      })}
+    </ul>
   );
 }

@@ -3,7 +3,45 @@ title: Reins
 description: Réalisé dans le cadre de mon Travail de Fin d’Études, Reins est un tracker de montures pour World of Warcraft exploitant l’API officielle de Blizzard. L’enjeu était de concevoir un outil immersif, doté d'une interface sur-mesure qui reprend fidèlement les codes visuels du jeu. Développé avec Nuxt, Neon, BetterAuth et SASS.
 year: 2026
 projectType: Web App
-tags: [Vue, Nuxt, TypeScript, SASS]
+tags: [Nuxt, BetterAuth, Neon, SASS]
+roles: [Design, Développement]
+startDate: Février 2026
+endDate: Juin 2026
+link: https://reins.manciu.be
 ---
 
-# Reins
+## Contexte
+
+Ce projet a été réalisé dans le cadre de mon Travail de Fin d'Études en 3e année de bachelier au sein de la Haute École Albert Jacquard.
+
+Depuis quelques temps, je joue à World of Warcraft. Et sur ce jeu, j'ai découvert une manière de jouer qui me passionne : la chasse aux montures. Déjà utilisateur de divers outils permettant de faciliter cette chasse aux montures, j’ai voulu proposer ma version de ce genre d’outils en y incluant des fonctionnalités absentes dans ceux que j’utilisais déjà.
+
+## Direction artistique
+
+Pour la direction artistique, j'ai voulu proposer quelque chose se rapprochant de la direction artistique déjà établie par Blizzard pour World of Warcraft, en reprenant des codes visuels de l’interface du jeu afin de les inclure dans cet outil. L'important pour moi était de garder un aspect fantasy et de donner l’impression que l’outil est une extension du jeu, afin de préserver l’immersion.
+
+{/* Caroussel */}
+
+Les codes visuels repris passaient principalement par :
+
+- l’utilisation des couleurs présentes en jeu dans différents endroits de l’interface ;
+- l’utilisation de la Tiller — une typographie à léger empattement — comme police principale, et de la Sentient pour les textes en italique ;
+- l’utilisation de menus accordéons directement inspirés de ceux du menu de quêtes de World of Warcraft.
+
+## Développement
+
+Pour le développement du site, s'agissant de mon Travail de Fin d'Études, j'ai décidé de m'orienter vers l'apprentissage d'un framework JavaScript moderne, comme React ou Vue.js, afin de créer une application web réactive. Mon choix s'est porté sur Vue.js en raison de sa courbe d'apprentissage relativement douce.
+
+Une grosse partie des données affichées sur le site proviennent de l'API de World of Warcraft. La liste des montures classée par catégorie provient, quant à elle, d'un dépôt GitHub public qui est mis à jour régulièrement.
+
+Certaines données de l’API de WoW ne sont pas disponibles publiquement, l’utilisateur doit se connecter à son propre compte Battle.net afin de pouvoir les afficher. Pour gérer cela, j'utilise OAuth 2.0 de Blizzard, ce qui me donne accès aux données relatives au compte de l'utilisateur, telles que les montures qu'il possède. Ce système offre également la possibilité de personnaliser l'expérience : les utilisateurs peuvent épingler des montures afin de construire leur propre « tableau de chasse » hebdomadaire.
+
+{/* Deux images côte à côte */}
+
+En plus de pouvoir voir leur collection, les utilisateurs peuvent également la comparer avec d'autres personnes. Lors de cette comparaison, ils peuvent voir les différences entre leurs collections avec le montant différent dans chaque catégorie. Ils ont également la possibilité de partager le résultat en copiant le lien de la page.
+
+{/* Image seule */}
+
+Chaque monture dispose de sa page dédiée, où sont présentées les manières de l'obtenir dans le jeu. Ces pages sont rédigées manuellement car ce sont des informations qui ne peuvent pas être automatiquement récupérées. Si une monture n'a pas encore de guide, les utilisateurs peuvent en proposer un grâce à l’intégration de Nuxt Content.
+
+{/* Deux images côte à côte */}

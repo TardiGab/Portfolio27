@@ -1,6 +1,6 @@
 .link {
   position: relative;
-  display: inline-block;
+  // display: inline-block;
   text-decoration: none;
   color: inherit;
   overflow: hidden;
@@ -16,7 +16,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    color: var(--color-primary);
+    color: var(--link-color);
     transform: translateY(100%);
     transition: transform 0.5s cubic-bezier(.8, 0, 0, .8);
     font-size: 1em;
@@ -28,7 +28,7 @@
     }
 
     span {
-      transform: translateY(-100%);
+      transform: translateY(-150%);
     }
   }
 }

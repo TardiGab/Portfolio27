@@ -6,9 +6,11 @@ export default function CaseLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="case h-full">
-      <Navigation />
-      {children}
-    </main>
+    <>
+      <header className="case-header fixed top-0 left-0 z-50 w-full">
+        <Navigation />
+      </header>
+      <main className="case h-full">{children}</main>
+    </>
   );
 }
