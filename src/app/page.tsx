@@ -3,6 +3,7 @@ import Navigation from "./components/ui/Navigation/navigation";
 import Projects from "./components/landing/Projects/projects";
 import ProjectsList from "./components/ui/ProjectsList/projects-list";
 import Content from "./components/landing/Content/content";
+import Carousel from "./components/ui/Caroussel/carousel";
 
 export default function Home() {
   return (

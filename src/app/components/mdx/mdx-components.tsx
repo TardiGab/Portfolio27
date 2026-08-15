@@ -6,6 +6,7 @@ import ArrowRight from "../icons/arrow-right";
 import ArrowOutwards from "../icons/arrow-outwards";
 import ArrowBack from "../icons/arrow-back";
 import Image from "next/image";
+import Carousel from "../ui/Caroussel/carousel";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -40,5 +41,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Image: (props) => (
       <Image width={1920} height={1080} {...props} className="rounded-lg" />
     ),
+    Carousel: (props) => <Carousel images={props.images} alt={props.alt} />,
   };
 }
