@@ -32,7 +32,7 @@ export default async function ProjectsList() {
     }),
   );
   return (
-    <ul className="sticky top-1/4">
+    <ul className="sticky top-1/4 flex flex-col gap-40">
       {projects.map((project) => {
         return (
           <li key={project.slug} className="sticky top-1/4">

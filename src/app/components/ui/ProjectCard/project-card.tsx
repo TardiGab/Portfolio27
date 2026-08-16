@@ -84,7 +84,7 @@ export default function ProjectCard({
 
   return (
     <Link
-      className={`${className || ""} ${styles.card} sticky top-1/4 mb-4 grid grid-cols-1 gap-6 rounded-4xl bg-[#0F0000] p-4 transition-colors duration-300 hover:bg-[#350F13] lg:grid-cols-2`}
+      className={`${className || ""} ${styles.card} sticky top-1/4 mb-4 grid h-full grid-cols-1 gap-6 rounded-4xl bg-[#350F13] p-4 transition-colors duration-300 hover:bg-[#350F13] sm:bg-[#0F0000] lg:grid-cols-2`}
       href={link || "#"}
       ref={card}
       onMouseEnter={handleMouseEnter}
