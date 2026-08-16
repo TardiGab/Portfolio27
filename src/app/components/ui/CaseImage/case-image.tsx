@@ -9,17 +9,19 @@ export default function CaseImage({
   alt,
   caption,
   link,
+  className,
 }: {
   src: string;
   alt: string;
   caption?: string;
   link?: string;
+  className?: string;
 }) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <>
-      <figure className="mt-6 mb-6 w-full">
+      <figure className={`w-full ${className}`}>
         <Image
           src={src}
           alt={alt}

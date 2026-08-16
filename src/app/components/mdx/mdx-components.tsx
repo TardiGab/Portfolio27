@@ -19,7 +19,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     h2: (props) => (
       <h2
-        className={` ${styles.h2} font-display mt-12 mb-8 leading-[.9] font-medium uppercase`}
+        className={` ${styles.h2} font-display mt-8 mb-6 leading-[.9] font-medium uppercase md:mt-12 md:mb-8`}
         {...props}
       />
     ),
@@ -49,6 +49,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         alt={props.alt}
         caption={props.caption}
         link={props.link}
+        className={props.className}
       />
     ),
   };

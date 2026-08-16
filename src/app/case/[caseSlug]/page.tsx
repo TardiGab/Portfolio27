@@ -67,8 +67,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           width={1920}
           height={1080}
         />
-        <div className="flex flex-row justify-between text-left">
-          <div className="flex flex-col flex-wrap gap-8 text-left xl:flex-row">
+        <div className="flex flex-col justify-between text-left sm:flex-row">
+          <div className="flex flex-col flex-wrap gap-6 text-left sm:gap-8 xl:flex-row">
             <div>
               <h3
                 className={`${styles.case__infosTitle} font-display mb-4 leading-none font-medium text-neutral-300 uppercase`}
@@ -110,7 +110,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col items-end gap-4">
+          <div className="mt-8 flex flex-col gap-4 sm:items-end">
             <RollingLink
               label="Voir le projet"
               href={data.frontmatter.link}
