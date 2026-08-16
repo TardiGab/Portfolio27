@@ -110,7 +110,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </ul>
             </div>
           </div>
-          <div className="mt-8 flex flex-col gap-4 sm:items-end">
+          <div className="mt-8 flex flex-col gap-4 sm:mt-0 sm:items-end">
             <RollingLink
               label="Voir le projet"
               href={data.frontmatter.link}
