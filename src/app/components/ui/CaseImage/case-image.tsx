@@ -19,7 +19,7 @@ export default function CaseImage({
 
   return (
     <>
-      <figure className="mt-8 mb-8 w-full">
+      <figure className="mt-6 mb-6 w-full">
         <Image
           src={src}
           alt={alt}
