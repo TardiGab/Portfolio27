@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-lexend);
   --font-display: var(--font-clash-display);
+  --main-size: clamp(1rem, 0.8929rem + 0.5357vw, 1.375rem);
 }
 
 body {
@@ -27,4 +28,13 @@ html {
       #0e3258 0%,
       #040915 100%);
   rotate: 180deg;
+}
+
+.main-size {
+  font-size: var(--main-size);
+}
+
+.swiper {
+  --swiper-navigation-color: var(--foreground);
+  --swiper-pagination-color: var(--foreground);
 }

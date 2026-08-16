@@ -1,34 +1,26 @@
 .link {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-  overflow: hidden;
-
-  span {
+  .row {
+    display: inline-flex;
+    align-items: center;
+    color: var(--link-color);
     transition: transform 0.5s cubic-bezier(.8, 0, 0, .8);
+    line-height: 1;
   }
 
-  &::after {
-    content: attr(data-label);
+  .row[aria-hidden="true"] {
     position: absolute;
-    top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    color: var(--color-primary);
-    transform: translateY(100%);
-    transition: transform 0.5s cubic-bezier(.8, 0, 0, .8);
-    font-size: 1em;
+    top: 0;
+    transform: translateY(120%);
   }
 
   &:hover {
-    &::after {
-      transform: translateY(0);
+    .row {
+      transform: translateY(-120%);
     }
 
-    span {
-      transform: translateY(-100%);
+    .row[aria-hidden="true"] {
+      transform: translateY(0);
     }
   }
 }

@@ -1,16 +1,19 @@
+"use client";
+
 import styles from "./projects.module.scss";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ProjectCard from "../../ui/ProjectCard/project-card";
 
 export default function Projects({
   className,
   id,
+  children,
 }: {
   className?: string;
   id?: string;
+  children?: React.ReactNode;
 }) {
   gsap.registerPlugin(useGSAP);
   gsap.registerPlugin(SplitText);
@@ -52,17 +55,7 @@ export default function Projects({
       >
         Mes fiertés
       </h2>
-      <div className="projects-container sticky top-1/4">
-        <ProjectCard
-          title="Reins"
-          description="Réalisé dans le cadre de mon Travail de Fin d’Études, Reins est un tracker de montures pour World of Warcraft exploitant l’API officielle de Blizzard. L’enjeu était de concevoir un outil immersif, doté d'une interface sur-mesure qui reprend fidèlement les codes visuels du jeu. Développé avec Nuxt, Neon, BetterAuth et SASS."
-          year={2026}
-          projectType="Web app"
-          image="/images/landing/projects/reins.webp"
-          link="/projects/reins"
-          className="project-card"
-        />
-      </div>
+      <div className="projects-container sticky top-1/4">{children}</div>
     </section>
   );
 }

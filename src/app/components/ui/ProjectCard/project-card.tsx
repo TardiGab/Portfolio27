@@ -6,6 +6,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,8 +83,8 @@ export default function ProjectCard({
   }
 
   return (
-    <a
-      className={`${className || ""} ${styles.card} sticky top-1/4 mb-4 grid grid-cols-1 gap-6 rounded-4xl bg-[#0F0000] p-4 transition-colors duration-300 hover:bg-[#350F13] lg:grid-cols-2`}
+    <Link
+      className={`${className || ""} ${styles.card} sticky top-1/4 mb-4 grid h-full grid-cols-1 gap-6 rounded-4xl bg-[#350F13] p-4 transition-colors duration-300 hover:bg-[#350F13] sm:bg-[#0F0000] lg:grid-cols-2`}
       href={link || "#"}
       ref={card}
       onMouseEnter={handleMouseEnter}
@@ -121,6 +122,6 @@ export default function ProjectCard({
           {description || "Project Description"}
         </p>
       </div>
-    </a>
+    </Link>
   );
 }

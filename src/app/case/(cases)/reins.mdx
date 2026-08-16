@@ -1,0 +1,104 @@
+---
+title: Reins
+description: Réalisé dans le cadre de mon Travail de Fin d’Études, Reins est un tracker de montures pour World of Warcraft exploitant l’API officielle de Blizzard. L’enjeu était de concevoir un outil immersif, doté d'une interface sur-mesure qui reprend fidèlement les codes visuels du jeu. Développé avec Nuxt, Neon, BetterAuth et SASS.
+year: 2026
+projectType: Web App
+tags: [Nuxt, BetterAuth, Neon, SASS]
+roles: [Design, Développement]
+startDate: Février 2026
+endDate: Juin 2026
+link: https://reins.manciu.be
+---
+
+## Contexte
+
+Ce projet a été réalisé dans le cadre de mon Travail de Fin d'Études en 3e année de bachelier au sein de la Haute École Albert Jacquard.
+
+Depuis quelques temps, je joue à World of Warcraft. Et sur ce jeu, j'ai découvert une manière de jouer qui me passionne : la chasse aux montures. Déjà utilisateur de divers outils permettant de faciliter cette chasse aux montures, j’ai voulu proposer ma version de ce genre d’outils en y incluant des fonctionnalités absentes dans ceux que j’utilisais déjà.
+
+## Direction artistique
+
+Pour la direction artistique, j'ai voulu proposer quelque chose se rapprochant de la direction artistique déjà établie par Blizzard pour World of Warcraft, en reprenant des codes visuels de l’interface du jeu afin de les inclure dans cet outil. L'important pour moi était de garder un aspect fantasy et de donner l’impression que l’outil est une extension du jeu, afin de préserver l’immersion.
+
+<Carousel
+  images="/images/case/reins/reins_login.webp,/images/case/reins/reins_logged-in-collection.webp,/images/case/reins/reins_mount-page.webp,/images/case/reins/reins_comparison-open.webp"
+  alt="Carrousel d'images du projet Reins"
+/>
+
+Les codes visuels repris passaient principalement par :
+
+- l’utilisation des couleurs présentes en jeu dans différents endroits de l’interface ;
+- l’utilisation de la Tiller — une typographie à léger empattement — comme police principale, et de la Sentient pour les textes en italique ;
+- l’utilisation de menus accordéons directement inspirés de ceux du menu de quêtes de World of Warcraft.
+
+## Développement
+
+Pour le développement du site, s'agissant de mon Travail de Fin d'Études, j'ai décidé de m'orienter vers l'apprentissage d'un framework JavaScript moderne, comme React ou Vue.js, afin de créer une application web réactive. Mon choix s'est porté sur Vue.js en raison de sa courbe d'apprentissage relativement douce.
+
+Une grosse partie des données affichées sur le site proviennent de l'API de World of Warcraft. La liste des montures classée par catégorie provient, quant à elle, d'un dépôt GitHub public qui est mis à jour régulièrement.
+
+Certaines données de l’API de WoW ne sont pas disponibles publiquement, l’utilisateur doit se connecter à son propre compte Battle.net afin de pouvoir les afficher. Pour gérer cela, j'utilise OAuth 2.0 de Blizzard, ce qui me donne accès aux données relatives au compte de l'utilisateur, telles que les montures qu'il possède.
+
+Ce système offre également la possibilité de personnaliser l'expérience : les utilisateurs peuvent épingler des montures afin de construire leur propre « tableau de chasse » hebdomadaire. Lorsqu'un utilisateur épingle une monture, celle-ci est stockée dans une base de données et sera affichée sur sa page de collection.
+
+<div className="mt-6 mb-6 flex flex-col md:flex-row md:gap-4">
+  <CaseImage
+    src="/images/case/reins/reins_logged-in-pinned-mounts.webp"
+    alt="Montures épinglées d'un utilisateur connecté"
+    caption="Montures épinglées d'un utilisateur connecté"
+  />
+  <CaseImage
+    src="/images/case/reins/reins_logged-in-visiting-pinned-mounts.webp"
+    alt="Message d'un utilisateur connecté visitant la collection d'un autre utilisateur"
+    caption="Message d'un utilisateur connecté visitant la collection d'un autre utilisateur"
+  />
+  <CaseImage
+    src="/images/case/reins/reins_guest-pinned-mounts.webp"
+    alt="Message d'un utilisateur invité visitant une collection"
+    caption="Message d'un utilisateur invité visitant une collection"
+  />
+</div>
+
+Les utilisateurs peuvent également visiter les profils d'autres utilisateurs afin de voir leurs collections ou simplement visiter leur collection en tant qu'invité, sans devoir se connecter, en faisant une cherche avec le nom et le royaume de son personnage en jeu.
+
+<div className="mt-6 mb-6 flex flex-col md:flex-row md:gap-4">
+  <CaseImage
+    src="/images/case/reins/reins_guest-visiting-collection.webp"
+    alt="Collection d'un utilisateur visitée par un invité"
+    caption="Collection d'un utilisateur visitée par un invité"
+  />
+  <CaseImage
+    src="/images/case/reins/reins_logged-in-visiting-collection.webp"
+    alt="Message d'un utilisateur connecté visitant la collection d'un autre utilisateur"
+    caption="Message d'un utilisateur connecté visitant la collection d'un autre utilisateur"
+  />
+</div>
+
+En plus de pouvoir voir leur collection, les utilisateurs peuvent également la comparer avec d'autres personnes. Lors de cette comparaison, ils peuvent voir les différences entre leurs collections avec le montant différent dans chaque catégorie. Ils ont également la possibilité de partager le résultat en copiant le lien de la page.
+
+<CaseImage
+  src="/images/case/reins/reins_comparison-open.webp"
+  alt="Comparaison de collections de montures"
+  caption="Comparaison de collections de montures"
+  link="https://reins.manciu.be/compare-result?region=eu&realm=confr%C3%A9rie-du-thorium&character=Grumir&cregion=eu&crealm=confr%C3%A9rie-du-thorium&ccharacter=Rallena"
+  className="mt-4 mb-4 md:mt-8 md:mb-8"
+/>
+
+Chaque monture dispose de sa page dédiée, où sont présentées les manières de l'obtenir dans le jeu. Ces pages sont rédigées manuellement car ce sont des informations qui ne peuvent pas être automatiquement récupérées. Si une monture n'a pas encore de guide, les utilisateurs peuvent en proposer un grâce à l’intégration de Nuxt Content.
+
+<div className="flex flex-col md:flex-row md:gap-4">
+  <CaseImage
+    src="/images/case/reins/reins_mount-page.webp"
+    alt="Page d'une monture avec du contenu"
+    caption="Page d'une monture avec du contenu"
+    link="https://reins.manciu.be/mount/smoldering-ember-wyrm"
+    className="mt-4 md:mt-8"
+  />
+  <CaseImage
+    src="/images/case/reins/reins_empty-mount-page.webp"
+    alt="Page d'une monture avec sans contenu"
+    caption="Page d'une monture sans contenu"
+    link="https://reins.manciu.be/mount/smoldering-ember-wyrm"
+    className="mt-4 md:mt-8"
+  />
+</div>
