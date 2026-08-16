@@ -64,8 +64,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           src={`/images/case/${caseSlug}/${caseSlug}.webp`}
           alt={data.frontmatter.title}
           className="mt-16 mb-8 h-auto w-full rounded-2xl object-cover"
-          width={800}
-          height={600}
+          width={1920}
+          height={1080}
         />
         <div className="flex flex-row justify-between text-left">
           <div className="flex flex-col flex-wrap gap-8 text-left xl:flex-row">

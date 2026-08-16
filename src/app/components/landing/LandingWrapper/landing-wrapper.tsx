@@ -3,7 +3,11 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-export default function Content({ children }: { children: React.ReactNode }) {
+export default function LandingWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   useGSAP(() => {
     // gsap code here...
     gsap.from(".background", {

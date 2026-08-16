@@ -2,12 +2,11 @@ import Hero from "./components/landing/Hero/hero";
 import Navigation from "./components/ui/Navigation/navigation";
 import Projects from "./components/landing/Projects/projects";
 import ProjectsList from "./components/ui/ProjectsList/projects-list";
-import Content from "./components/landing/Content/content";
-import Carousel from "./components/ui/Caroussel/carousel";
+import LandingWrapper from "./components/landing/LandingWrapper/landing-wrapper";
 
 export default function Home() {
   return (
-    <Content>
+    <LandingWrapper>
       <header>
         <Navigation className="navigation" />
       </header>
@@ -19,6 +18,6 @@ export default function Home() {
         </Projects>
       </main>
       <footer></footer>
-    </Content>
+    </LandingWrapper>
   );
 }
