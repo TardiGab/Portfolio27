@@ -33,6 +33,7 @@ export default function RootLayout({
     <html
       lang="fr"
       className={`h-full antialiased ${clashDisplay.variable} ${lexend.variable}`}
+      data-scroll-behavior="smooth"
     >
       <body>{children}</body>
     </html>

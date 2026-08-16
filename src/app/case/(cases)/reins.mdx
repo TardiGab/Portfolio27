@@ -21,7 +21,7 @@ Depuis quelques temps, je joue à World of Warcraft. Et sur ce jeu, j'ai découv
 Pour la direction artistique, j'ai voulu proposer quelque chose se rapprochant de la direction artistique déjà établie par Blizzard pour World of Warcraft, en reprenant des codes visuels de l’interface du jeu afin de les inclure dans cet outil. L'important pour moi était de garder un aspect fantasy et de donner l’impression que l’outil est une extension du jeu, afin de préserver l’immersion.
 
 <Carousel
-  images="/images/case/reins/reins.webp,/images/case/reins/reins.webp,/images/case/reins/reins.webp"
+  images="/images/case/reins/reins_login.webp,/images/case/reins/reins_logged-in-collection.webp,/images/case/reins/reins_mount-page.webp,/images/case/reins/reins_comparison-open.webp"
   alt="Carrousel d'images du projet Reins"
 />
 
@@ -43,26 +43,12 @@ Certaines données de l’API de WoW ne sont pas disponibles publiquement, l’u
 
 En plus de pouvoir voir leur collection, les utilisateurs peuvent également la comparer avec d'autres personnes. Lors de cette comparaison, ils peuvent voir les différences entre leurs collections avec le montant différent dans chaque catégorie. Ils ont également la possibilité de partager le résultat en copiant le lien de la page.
 
-<figure className="mt-8 mb-8 w-full">
-  <Image
-    src="/images/case/reins/reins.webp"
-    alt="Comparaison de collections entre deux utilisateurs"
-    className="w-full rounded-lg"
-    width={1920}
-    height={1080}
-  />
-  <figcaption className="mt-2 text-sm text-gray-500">
-    <RollingLink
-      label="Lien vers la comparaison en cours"
-      href="https://reins.manciu.be/compare-result?region=eu&realm=confr%C3%A9rie-du-thorium&character=Grumir&cregion=EU&crealm=confr%C3%A9rie-du-thorium&ccharacter=Rallena"
-      target="_blank"
-      arrow="outwards"
-      iconPosition="right"
-      className="font-sans text-base"
-      color="white"
-    />
-  </figcaption>
-</figure>
+<CaseImage
+  src="/images/case/reins/reins_comparison-open.webp"
+  alt="Comparaison de collections de montures"
+  caption="Comparaison de collections de montures"
+  link="https://reins.manciu.be/compare-result?region=eu&realm=confr%C3%A9rie-du-thorium&character=Grumir&cregion=eu&crealm=confr%C3%A9rie-du-thorium&ccharacter=Rallena"
+/>
 
 Chaque monture dispose de sa page dédiée, où sont présentées les manières de l'obtenir dans le jeu. Ces pages sont rédigées manuellement car ce sont des informations qui ne peuvent pas être automatiquement récupérées. Si une monture n'a pas encore de guide, les utilisateurs peuvent en proposer un grâce à l’intégration de Nuxt Content.
 
