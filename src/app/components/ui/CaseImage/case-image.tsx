@@ -31,7 +31,7 @@ export default function CaseImage({
           onClick={() => setSelectedImage(src)}
         />
         {caption && (
-          <figcaption className="mt-2 text-sm text-gray-500">
+          <figcaption className="mt-2 text-[1rem]">
             {link ? (
               <RollingLink
                 label={caption}
