@@ -1,7 +1,16 @@
 "use client";
 
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const COLORS = {
+  base: "radial-gradient(75% 15% at 50% 100%, #0e3258 0%, #040915 100%)",
+  projects: "radial-gradient(75% 15% at 50% 100%, #6B0000 0%, #0F0000 100%)",
+  about: "radial-gradient(75% 15% at 50% 100%, #0e3258 0%, #040915 100%)",
+};
 
 export default function LandingWrapper({
   children,
@@ -9,7 +18,6 @@ export default function LandingWrapper({
   children: React.ReactNode;
 }) {
   useGSAP(() => {
-    // gsap code here...
     gsap.from(".background", {
       opacity: 0,
       duration: 1,
@@ -19,30 +27,37 @@ export default function LandingWrapper({
       opacity: 0,
       duration: 1,
       ease: "back.inOut(2)",
-      // Deletes all inline styles applied by GSAP after the animation completes
       clearProps: "all",
     });
 
-    gsap.to(".background", {
-      scrollTrigger: {
-        trigger: ".projects",
-        start: "top 30%",
-        end: "top top",
-        toggleActions: "play none none reverse",
-      },
-      backgroundImage:
-        "radial-gradient(75% 15% at 50% 100%, #6B0000 0%, #0F0000 100%)",
+    // Transition base <-> projects
+    ScrollTrigger.create({
+      trigger: ".projects",
+      start: "top 30%",
+      end: "top top",
+      onEnter: () =>
+        gsap.to(".background", {
+          backgroundImage: COLORS.projects,
+          duration: 1,
+        }),
+      onLeaveBack: () =>
+        gsap.to(".background", { backgroundImage: COLORS.base, duration: 1 }),
     });
 
-    gsap.to(".navigation", {
-      scrollTrigger: {
-        trigger: ".projects",
-        start: "top 30%",
-        end: "top top",
-        toggleActions: "play none none reverse",
-      },
-      border: "1px solid #460809",
+    // Transition projects <-> about
+    ScrollTrigger.create({
+      trigger: ".about",
+      start: "top bottom",
+      end: "top top",
+      onEnter: () =>
+        gsap.to(".background", { backgroundImage: COLORS.about, duration: 1 }),
+      onLeaveBack: () =>
+        gsap.to(".background", {
+          backgroundImage: COLORS.projects,
+          duration: 1,
+        }),
     });
   });
+
   return <>{children}</>;
 }
