@@ -4,6 +4,7 @@ import Projects from "./components/landing/Projects/projects";
 import ProjectsList from "./components/ui/ProjectsList/projects-list";
 import LandingWrapper from "./components/landing/LandingWrapper/landing-wrapper";
 import About from "./components/landing/About/about";
+import Contact from "./components/landing/Contact/contact";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
             <ProjectsList />
           </Projects>
           <About className="about" />
+          <Contact className="contact" />
         </div>
       </main>
       <footer></footer>
