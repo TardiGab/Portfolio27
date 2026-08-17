@@ -16,31 +16,37 @@ export default function Contact({ className }: { className?: string }) {
         />
         <div>
           <h2
-            className={`${styles.title} font-display text-4xl font-medium uppercase`}
+            className={`${styles.title} font-display mb-8 text-4xl font-medium uppercase`}
           >
             Une opportunité ?
           </h2>
-          <p className="mt-4 max-w-[90vw] text-lg leading-[1.2] opacity-80">
+          <p className={`mb-4 max-w-[90vw] leading-[1.4] ${styles.content}`}>
             Je suis actuellement à la recherche d’une nouvelle aventure en tant
             que développeur frontend junior dans la province de Namur ou en
             hybride.
           </p>
-          <p className="mt-4 max-w-[90vw] text-lg leading-[1.2] opacity-80">
-            C’est un match ? Alors discutons en sur LinkedIn ou par mail.{" "}
+          <p className={`mb-8 max-w-[90vw] leading-[1.4] ${styles.content}`}>
+            C’est un match ? Alors discutons en sur LinkedIn ou par mail.
           </p>
-          <div>
+          <div className="flex flex-wrap items-center gap-4">
             <RollingLink
               href="https://www.linkedin.com/in/gabriel-manciu/"
               label="LinkedIn"
               arrow="outwards"
               iconPosition="right"
-              className={`font-display uppercase`}
-            />{" "}
-            •{" "}
+              className={`${styles.links} font-display font-medium uppercase`}
+            />
+            <span className="hidden text-4xl text-gray-400 md:inline-block">
+              •
+            </span>
             <RollingLink
               href="mailto:gabriel@manciu.be"
-              label="gabriel@manciu.be"
-              className={`font-display uppercase`}
+              label={
+                <>
+                  gabriel<span className="text-green-600">@</span>manciu.be
+                </>
+              }
+              className={`${styles.links} font-display font-medium uppercase`}
             />
           </div>
         </div>

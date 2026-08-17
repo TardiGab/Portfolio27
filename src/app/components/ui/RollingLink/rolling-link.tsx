@@ -14,7 +14,7 @@ export default function RollingLink({
   color,
 }: {
   href: string;
-  label: string;
+  label: string | React.ReactNode;
   className?: string;
   target?: string;
   arrow?: string;
