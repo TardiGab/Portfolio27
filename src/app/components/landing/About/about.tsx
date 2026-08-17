@@ -24,7 +24,6 @@ export default function About({ className = "" }: { className?: string }) {
           end: "+=100%",
           scrub: true,
           pin: true,
-          markers: true,
         },
       });
 
@@ -45,9 +44,10 @@ export default function About({ className = "" }: { className?: string }) {
   );
 
   return (
+    // mt-[-30%] afin de réduire le gap avec la section précédente
     <div
       ref={container}
-      className={`${className} about-wrapper h-screen items-center justify-center`}
+      className={`${className} about-wrapper mt-[-30%] h-screen items-center justify-center`}
     >
       <p
         className={`${styles.text} about-text font-display m-auto max-w-[90vw] leading-[1.2] uppercase`}

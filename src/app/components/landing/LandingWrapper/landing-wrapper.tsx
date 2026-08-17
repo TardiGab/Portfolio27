@@ -48,7 +48,8 @@ export default function LandingWrapper({
     // Transition projects <-> about
     ScrollTrigger.create({
       trigger: ".about",
-      start: "top bottom",
+      // 30% pour que le dégradé change quand on commence à voir le texte
+      start: "top 30%",
       end: "top top",
       onEnter: () =>
         gsap.to(".background", { backgroundImage: COLORS.about, duration: 1 }),
