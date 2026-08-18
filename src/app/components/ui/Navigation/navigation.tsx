@@ -134,7 +134,7 @@ export function RollingButton({ className }: { className?: string }) {
 export default function Navigation({ className }: { className?: string }) {
   return (
     <div
-      className={`fixed top-8 left-1/2 z-50 origin-center -translate-x-1/2 rounded-3xl border border-blue-950 bg-black ${className || ""}`}
+      className={`fixed top-8 left-1/2 z-50 origin-center -translate-x-1/2 rounded-3xl border border-gray-900 bg-black ${className || ""}`}
     >
       <div
         className={`${styles.container} nav-panel flex w-[70vw] flex-col items-center justify-between overflow-hidden p-3 sm:w-[50vw] md:w-[50vw] lg:w-[50vw] xl:w-[20vw]`}
