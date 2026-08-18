@@ -3,6 +3,7 @@ import styles from "./rolling-link.module.scss";
 import ArrowRight from "../../icons/arrow-right";
 import ArrowBack from "../../icons/arrow-back";
 import ArrowOutwards from "../../icons/arrow-outwards";
+import ArrowUpwards from "../../icons/arrow-upwards";
 
 export default function RollingLink({
   href,
@@ -29,6 +30,8 @@ export default function RollingLink({
         return <ArrowBack size="1em" />;
       case "outwards":
         return <ArrowOutwards size="1em" />;
+      case "upwards":
+        return <ArrowUpwards size="1em" />;
       default:
         return null;
     }
@@ -37,15 +40,11 @@ export default function RollingLink({
   const content = (
     <span className="inline-flex items-center leading-[1.2]">
       {iconPosition === "left" && arrow && (
-        <span className="mr-2 inline-flex items-center">
-          {renderIcon(arrow)}
-        </span>
+        <span className="mr-[.125em] items-center">{renderIcon(arrow)}</span>
       )}
       <span className="">{label}</span>
       {iconPosition === "right" && arrow && (
-        <span className="ml-2 inline-flex items-center">
-          {renderIcon(arrow)}
-        </span>
+        <span className="ml-[.125em] items-center">{renderIcon(arrow)}</span>
       )}
     </span>
   );
