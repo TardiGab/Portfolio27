@@ -1,0 +1,24 @@
+.footer {
+  background: radial-gradient(75% 25% at 50% 0%,
+      #0e3258 0%,
+      #040915 100%);
+  transform-origin: bottom center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  // Magic number mais c'est juste pour centrer visuellement le logo sur le footer
+  transform: translate(-53%, 50%);
+  background-image: url("/images/logo.svg");
+  background-size: cover;
+  background-position: center;
+  width: 90vw;
+  height: auto;
+  aspect-ratio: 3 / 1;
+  z-index: 100;
+  opacity: .1;
+}

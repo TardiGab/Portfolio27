@@ -24,7 +24,7 @@ export default function Home() {
           <Contact className="contact" />
         </div>
       </main>
-      <Footer />
+      <Footer className="footer" />
     </LandingWrapper>
   );
 }
