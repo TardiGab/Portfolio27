@@ -6,7 +6,7 @@ import styles from "./contact.module.scss";
 export default function Contact({ className }: { className?: string }) {
   return (
     <div className={className || "contact-container"}>
-      <div className="contact-wrapper m-auto flex h-screen max-w-[80vw] flex-col items-center justify-center gap-8 md:flex-row">
+      <div className="contact-wrapper m-auto flex h-screen max-w-[90vw] flex-col items-center justify-center gap-8 md:max-w-[80vw] lg:flex-row">
         <Image
           src="/images/landing/gabriel-manciu.webp"
           alt="Contact"
@@ -18,7 +18,7 @@ export default function Contact({ className }: { className?: string }) {
           <h2
             className={`${styles.title} font-display mb-8 text-4xl font-medium uppercase`}
           >
-            Une opportunité ?
+            Une opportunité &nbsp;?
           </h2>
           <p className={`mb-4 max-w-[90vw] leading-[1.4] ${styles.content}`}>
             Je suis actuellement à la recherche d’une nouvelle aventure en tant
