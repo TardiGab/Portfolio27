@@ -17,10 +17,10 @@ export default function Home() {
         <div className="background fixed top-0 left-0 z-0 h-screen w-full"></div>
         <div className="relative z-10">
           <Hero />
-          <Projects className="projects">
+          <Projects className="projects relative z-12">
             <ProjectsList />
           </Projects>
-          <About className="about" />
+          <About className="about relative z-11" />
           <Contact className="contact" />
         </div>
       </main>
