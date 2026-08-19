@@ -2,13 +2,42 @@
 
 import styles from "./navigation.module.scss";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
-export function RollingButton({ className }: { className?: string }) {
+gsap.registerPlugin(ScrollToPlugin);
+
+export function RollingButton({
+  className,
+  isOpen,
+  onClick,
+}: {
+  className?: string;
+  isOpen: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      className={`${styles.button} ${className || ""}`}
+      data-label={isOpen ? "Fermer" : "Menu"}
+      aria-expanded={isOpen}
+      onClick={onClick}
+    >
+      <span className="inline-block">{isOpen ? "Fermer" : "Menu"}</span>
+    </button>
+  );
+}
+
+export default function Navigation({ className }: { className?: string }) {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const openMenu = () => {
-    const nextOpen = !isOpen;
+
+  const toggleMenu = (forceClose: boolean = false) => {
+    const nextOpen = forceClose ? false : !isOpen;
+    if (isOpen === nextOpen) return;
+
     setIsOpen(nextOpen);
     const mm = gsap.matchMedia();
     if (nextOpen) {
@@ -119,19 +148,21 @@ export function RollingButton({ className }: { className?: string }) {
     }
   };
 
-  return (
-    <button
-      className={`${styles.button} ${className || ""}`}
-      data-label={isOpen ? "Fermer" : "Menu"}
-      aria-expanded={isOpen}
-      onClick={openMenu}
-    >
-      <span className="inline-block">{isOpen ? "Fermer" : "Menu"}</span>
-    </button>
-  );
-}
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    target: string,
+  ) => {
+    toggleMenu(true);
+    if (pathname === "/") {
+      e.preventDefault();
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: { y: target, autoKill: false, offsetY: 50 },
+        ease: "power3.inOut",
+      });
+    }
+  };
 
-export default function Navigation({ className }: { className?: string }) {
   return (
     <div
       className={`fixed top-8 left-1/2 z-50 origin-center -translate-x-1/2 rounded-3xl border border-gray-900 bg-black ${className || ""}`}
@@ -151,14 +182,19 @@ export default function Navigation({ className }: { className?: string }) {
             <span className="hidden sm:inline">Gabriel Manciu</span>
           </div>
           <div className="flex">
-            <RollingButton className="relative inline-block cursor-pointer overflow-hidden" />
+            <RollingButton
+              isOpen={isOpen}
+              onClick={() => toggleMenu(false)}
+              className="relative inline-block cursor-pointer overflow-hidden"
+            />
           </div>
         </div>
         <nav className="nav-element w-full">
           <ul className="flex flex-col justify-center gap-2 pt-4 text-xs sm:flex-row sm:items-end">
             <li className="w-full">
               <a
-                href="#projects"
+                href="/#projects"
+                onClick={(e) => handleLinkClick(e, "#projects")}
                 className="flex flex-col rounded-2xl border border-red-700 bg-red-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
               >
                 <span className="font-display text-2xl font-medium uppercase">
@@ -169,7 +205,8 @@ export default function Navigation({ className }: { className?: string }) {
             </li>
             <li className="w-full">
               <a
-                href="#about"
+                href="/#about"
+                onClick={(e) => handleLinkClick(e, "#about")}
                 className="flex flex-col rounded-2xl border border-blue-700 bg-blue-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
               >
                 <span className="font-display text-2xl font-medium uppercase">
@@ -180,7 +217,8 @@ export default function Navigation({ className }: { className?: string }) {
             </li>
             <li className="w-full">
               <a
-                href="#contact"
+                href="/#contact"
+                onClick={(e) => handleLinkClick(e, "#contact")}
                 className="flex flex-col rounded-2xl border border-green-700 bg-green-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
               >
                 <span className="font-display text-2xl font-medium uppercase">

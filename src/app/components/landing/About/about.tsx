@@ -48,6 +48,7 @@ export default function About({ className = "" }: { className?: string }) {
     <div
       ref={container}
       className={`${className} about-wrapper mt-[-30%] h-screen items-center justify-center`}
+      id="about"
     >
       <p
         className={`${styles.text} about-text font-display m-auto max-w-[90vw] leading-[1.2] uppercase`}

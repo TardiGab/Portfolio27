@@ -5,7 +5,7 @@ import styles from "./contact.module.scss";
 
 export default function Contact({ className }: { className?: string }) {
   return (
-    <div className={className || "contact-container"}>
+    <div className={className || "contact-container"} id="contact">
       <div className="contact-wrapper m-auto flex h-screen max-w-[90vw] flex-col items-center justify-center gap-8 md:max-w-[80vw] lg:flex-row">
         <Image
           src="/images/landing/gabriel-manciu.webp"

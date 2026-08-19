@@ -35,10 +35,6 @@ body {
   font-family: var(--font-lexend), var(--font-sans);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .background {
   background: radial-gradient(75% 15% at 50% 100%,
       #0e3258 0%,
