@@ -18,6 +18,7 @@ export default function ProjectCard({
   description,
   image,
   link,
+  tags,
 }: {
   className?: string;
   title: string;
@@ -26,6 +27,7 @@ export default function ProjectCard({
   description: string;
   image: string;
   link: string;
+  tags: string[];
 }) {
   const card = useRef<HTMLAnchorElement>(null);
 
@@ -45,23 +47,35 @@ export default function ProjectCard({
           className="h-auto w-full object-fill"
         />
       </div>
-      <div>
-        <div className="flex items-end gap-4">
-          <h3
-            className={`${styles.h3} font-display leading-none font-medium uppercase`}
-          >
-            {title || "Project Title"}
-          </h3>
-          <p className={`${styles.year} font-display leading-tight`}>
-            {year || 2024}
+      <div className="flex flex-col justify-between">
+        <div>
+          <div className="flex items-end gap-4">
+            <h3
+              className={`${styles.h3} font-display leading-none font-medium uppercase`}
+            >
+              {title || "Project Title"}
+            </h3>
+            <p className={`${styles.year} font-display leading-tight`}>
+              {year || 2024}
+            </p>
+          </div>
+          <div className={`${styles.type} mt-2 text-red-400 lowercase`}>
+            {projectType || "Project Type"}
+          </div>
+          <p className={`${styles.desc} mt-6 leading-[1.4]`}>
+            {description || "Project Description"}
           </p>
         </div>
-        <div className={`${styles.type} mt-2 text-red-400 lowercase`}>
-          {projectType || "Project Type"}
-        </div>
-        <p className={`${styles.desc} mt-6 leading-[1.4]`}>
-          {description || "Project Description"}
-        </p>
+        <ul className="mt-4 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full border border-red-500/20 bg-white/10 px-2 py-1 text-xs"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
       </div>
     </Link>
   );

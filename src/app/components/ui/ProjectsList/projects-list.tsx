@@ -43,6 +43,7 @@ export default async function ProjectsList() {
               projectType={project.projectType}
               link={`/case/${project.slug}`}
               image={`/images/case/${project.slug}/${project.slug}.webp`}
+              tags={project.tags}
             />
           </li>
         );
