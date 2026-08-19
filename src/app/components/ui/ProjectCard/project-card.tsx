@@ -27,74 +27,15 @@ export default function ProjectCard({
   image: string;
   link: string;
 }) {
-  const cursor = useRef<HTMLDivElement>(null);
   const card = useRef<HTMLAnchorElement>(null);
-
-  useGSAP(() => {
-    gsap.to(".know-more-cursor", {
-      rotation: -360,
-      repeat: -1,
-      duration: 15,
-      ease: "linear",
-    });
-  });
-
-  function handleMouseMove(e: React.MouseEvent<HTMLAnchorElement>) {
-    if (!card.current || !cursor.current) {
-      return;
-    }
-
-    const rect = card.current.getBoundingClientRect();
-
-    gsap.to(cursor.current, {
-      x: e.clientX - rect.left - cursor.current.offsetWidth / 2,
-      y: e.clientY - rect.top - cursor.current.offsetHeight / 2,
-      duration: 0.2,
-      ease: "power3.out",
-    });
-  }
-
-  function handleMouseEnter(e: React.MouseEvent<HTMLAnchorElement>) {
-    handleMouseMove(e);
-
-    if (!cursor.current) {
-      return;
-    }
-
-    gsap.to(cursor.current, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.2,
-      ease: "power2.out",
-    });
-  }
-
-  function handleMouseLeave() {
-    if (!cursor.current) {
-      return;
-    }
-
-    gsap.to(cursor.current, {
-      opacity: 0,
-      scale: 0,
-      duration: 0.2,
-      ease: "power2.out",
-    });
-  }
 
   return (
     <Link
       className={`${className || ""} ${styles.card} sticky top-1/4 mb-4 grid h-full grid-cols-1 gap-6 rounded-4xl bg-[#350F13] p-4 transition-colors duration-300 hover:bg-[#350F13] sm:bg-[#0F0000] lg:grid-cols-2`}
       href={link || "#"}
       ref={card}
-      onMouseEnter={handleMouseEnter}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      data-cursor="project"
     >
-      <div
-        className={`${styles.cursor} know-more-cursor absolute z-10 hidden lg:block`}
-        ref={cursor}
-      ></div>
       <div className="overflow-hidden rounded-2xl border border-red-950">
         <Image
           src={image}
