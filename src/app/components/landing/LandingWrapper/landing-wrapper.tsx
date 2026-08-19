@@ -39,10 +39,10 @@ export default function LandingWrapper({
       onEnter: () =>
         gsap.to(".background", {
           backgroundImage: COLORS.projects,
-          duration: 1,
+          duration: 0.5,
         }),
       onLeaveBack: () =>
-        gsap.to(".background", { backgroundImage: COLORS.base, duration: 1 }),
+        gsap.to(".background", { backgroundImage: COLORS.base, duration: 0.5 }),
     });
 
     // Transition projects <-> about
@@ -52,11 +52,14 @@ export default function LandingWrapper({
       start: "top 30%",
       end: "top top",
       onEnter: () =>
-        gsap.to(".background", { backgroundImage: COLORS.about, duration: 1 }),
+        gsap.to(".background", {
+          backgroundImage: COLORS.about,
+          duration: 0.5,
+        }),
       onLeaveBack: () =>
         gsap.to(".background", {
           backgroundImage: COLORS.projects,
-          duration: 1,
+          duration: 0.5,
         }),
     });
 
@@ -67,12 +70,28 @@ export default function LandingWrapper({
       onEnter: () =>
         gsap.to(".background", {
           backgroundImage: COLORS.contact,
-          duration: 1,
+          duration: 0.5,
         }),
       onLeaveBack: () =>
         gsap.to(".background", {
           backgroundImage: COLORS.about,
-          duration: 1,
+          duration: 0.5,
+        }),
+    });
+
+    ScrollTrigger.create({
+      trigger: ".footer",
+      start: "top bottom",
+      end: "top top",
+      onEnter: () =>
+        gsap.to(".background", {
+          opacity: 0,
+          duration: 0.5,
+        }),
+      onLeaveBack: () =>
+        gsap.to(".background", {
+          opacity: 1,
+          duration: 0.5,
         }),
     });
   });
