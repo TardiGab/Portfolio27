@@ -5,7 +5,7 @@ import styles from "./footer.module.scss";
 export default function Footer({ className }: { className?: string }) {
   return (
     <footer
-      className={`${styles.footer} ${className} relative m-auto min-h-[80vh] max-w-[90vw] rounded-t-[4rem] pt-[15vh] pr-4 pl-4 md:pr-[5%] md:pl-[5%]`}
+      className={`${styles.footer} ${className} relative m-auto min-h-[80vh] max-w-[90vw] rounded-t-4xl pt-[5vh] pr-6 pl-6 md:rounded-t-[4rem] md:pt-[15vh] md:pr-[5%] md:pl-[5%]`}
     >
       <div className="flex flex-col justify-between md:flex-row md:items-end">
         <div className="flex flex-col gap-6 md:flex-row">
