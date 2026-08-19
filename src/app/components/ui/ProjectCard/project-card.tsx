@@ -42,8 +42,8 @@ export default function ProjectCard({
         <Image
           src={image}
           alt={title || "Project Title"}
-          width={1500}
-          height={1300}
+          width={1920}
+          height={1080}
           className="h-auto w-full object-fill"
         />
       </div>
