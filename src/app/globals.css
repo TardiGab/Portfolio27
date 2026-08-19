@@ -54,3 +54,11 @@ html {
   --swiper-navigation-color: var(--foreground);
   --swiper-pagination-color: var(--foreground);
 }
+
+.h2-404 {
+  font-size: clamp(4rem, 2.125rem + 6.25vw, 7.75rem);
+}
+
+.back-404 {
+  font-size: clamp(1.4375rem, 1.0625rem + 1.875vw, 2.75rem);
+}
