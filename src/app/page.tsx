@@ -23,7 +23,7 @@ export default function Home() {
             <ProjectsList />
           </Projects>
           <About className="about relative z-11" />
-          <Contact className="contact" />
+          <Contact className="contact relative z-12" />
         </div>
       </main>
       <Footer className="footer" />

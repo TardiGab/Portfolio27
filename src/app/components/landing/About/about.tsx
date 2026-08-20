@@ -46,7 +46,7 @@ export default function About({ className = "" }: { className?: string }) {
   return (
     <div
       ref={container}
-      className={`${className} about-wrapper h-screen items-center justify-center`}
+      className={`${className} about-wrapper pointer-events-none h-screen items-center justify-center`}
       id="about"
     >
       <p
