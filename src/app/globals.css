@@ -51,6 +51,12 @@ body {
   --swiper-pagination-color: var(--foreground);
 }
 
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination {
+  mix-blend-mode: difference;
+}
+
 .h2-404 {
   font-size: clamp(4rem, 2.125rem + 6.25vw, 7.75rem);
 }

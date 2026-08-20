@@ -9,3 +9,59 @@ startDate: Novembre 2025
 endDate: Décembre 2025
 link: https://lionspa.be/
 ---
+
+## Contexte
+
+Ce projet a été réalisé dans le cadre de mon stage chez Eocene, sur une durée de 6 semaines. Le client, le Lions Club de Spa, souhaitait une refonte complète de son site web, qui était alors hébergé sur Google Sites. La demande était de moderniser le site tout en respectant la charte graphique du Lions International.
+
+Pour cette refonte, le client visait plusieurs objectifs clés :
+
+- Moderniser l'image et la présence en ligne, afin de toucher à la fois les membres du club et le grand public&nbsp;\;
+- Valoriser les actions et les projets portés par le club ;
+- Simplifier la gestion du contenu afin de faciliter les futures mises à jour ;
+- La présentaion du club (son comité et ses membres) ;
+- La mise en avant des projets et œuvres soutenues.
+
+## Direction artistique
+
+Comme l'objectif principal était de moderniser le site web du Lions Club de Spa, tout en respectant la charte graphique du Lions International (L.I.), je me suis tourné vers une direction artistique utilisant les deux couleurs principales du L.I. (le bleu et l'or) avec des éléments d'interface utilisant des arrondis prononcés, renforçant l'aspect moderne tout en gardant un visuel attractif et bienveillant.
+
+<div className="mt-6 mb-6 flex flex-col md:flex-row md:gap-4">
+  <CaseImage
+    src="/images/case/lions-club-de-spa/lionspa_google-sites.webp"
+    alt="Ancienne page d'accueil du site du Lions Club de Spa"
+    caption="Ancienne page d'accueil du site du Lions Club de Spa"
+  />
+  <CaseImage
+    src="/images/case/lions-club-de-spa/lionspa_wordpress.webp"
+    alt="Nouvelle page d'accueil du site du Lions Club de Spa"
+    caption="Nouvelle page d'accueil du site du Lions Club de Spa"
+  />
+</div>
+
+Afin de mettre en avant les dernières actualités et les projets du club, j'ai inclus divers sections dédiées à chaque thème sur la page d'accueil.
+
+<Carousel
+  images="/images/case/lions-club-de-spa/lionspa_actu.webp,/images/case/lions-club-de-spa/lionspa_oeuvres.webp,/images/case/lions-club-de-spa/lionspa_actions.webp"
+  alt="Carrousel d'images du projet Lions Club de Spa"
+/>
+
+Chaque section d'actualités dispose également de sa propre page d'archive avec toutes les dernières nouvelles publiées par le club.
+
+<CaseImage
+  src="/images/case/lions-club-de-spa/lionspa_archive.webp"
+  alt="Archive des actualités du Lions Club de Spa"
+  caption="Archive des actualités du Lions Club de Spa"
+  className="mb-4"
+/>
+
+L'ancienne structure Google Sites n'avait pas de page dédiée pour chaque actualités, il n'y avait qu'une seule page avec toutes les actualités. J'ai donc créé un template pour chaque actualités, œuvres ou actions.
+
+<Carousel
+  images="/images/case/lions-club-de-spa/lionspa_page-oeuvre.webp,/images/case/lions-club-de-spa/lionspa_page-action.webp,/images/case/lions-club-de-spa/lionspa_page-actualite.webp"
+  alt="Carrousel d'images des différentes pages d'actualités"
+/>
+
+## Développement
+
+L'intégration du site s'est faite sur WordPress grâce à WPBakery avec l'aide d'un thème pré-existant qui a été personnalisé pour les besoins du projet. Étant parfois limité par les fonctionnalités existantes du thème, j'ai eu recours à du PHP, des custom post types et des custom fields afin de pouvoir créer des templates personnalisés pour les pages d'actualités, œuvres et actions. Quant à l'adaptation visuelle du thème, elle s'est faite entièrement en CSS "vanilla" et en JavaScript.
