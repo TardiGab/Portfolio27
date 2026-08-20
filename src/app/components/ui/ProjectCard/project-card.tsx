@@ -33,12 +33,13 @@ export default function ProjectCard({
 
   return (
     <Link
-      className={`${className || ""} ${styles.card} sticky top-1/4 mb-4 grid h-full grid-cols-1 gap-6 rounded-4xl bg-[#350F13] p-4 transition-colors duration-300 hover:bg-[#350F13] sm:bg-[#0F0000] lg:grid-cols-2`}
+      className={`${className || ""} ${styles.card} sticky top-1/4 grid h-full min-h-[65dvh] grid-cols-1 gap-6 rounded-4xl bg-[#350F13] p-4 transition-colors duration-300 hover:bg-[#350F13] sm:bg-[#0F0000] lg:min-h-0 lg:grid-cols-2`}
       href={link || "#"}
       ref={card}
       data-cursor="project"
     >
-      <div className="overflow-hidden rounded-2xl border border-red-950">
+      {/* Image desktop */}
+      <div className="hidden overflow-hidden rounded-2xl border border-red-950 lg:block">
         <Image
           src={image}
           alt={title || "Project Title"}
@@ -47,6 +48,14 @@ export default function ProjectCard({
           className="h-auto w-full object-fill"
         />
       </div>
+      {/* Image mobile */}
+      <Image
+        src={image}
+        alt={title || "Project Title"}
+        width={1920}
+        height={1080}
+        className="block h-auto w-full rounded-2xl border border-red-950 object-cover lg:hidden"
+      />
       <div className="flex flex-col justify-between">
         <div>
           <div className="flex items-end gap-4">

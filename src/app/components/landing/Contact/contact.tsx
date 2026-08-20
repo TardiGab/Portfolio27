@@ -5,8 +5,8 @@ import styles from "./contact.module.scss";
 
 export default function Contact({ className }: { className?: string }) {
   return (
-    <div className={className || "contact-container"} id="contact">
-      <div className="contact-wrapper m-auto flex h-screen max-w-[90vw] flex-col items-center justify-center gap-8 md:max-w-[80vw] lg:flex-row">
+    <div className={`${className} mt-[-30%] h-screen`} id="contact">
+      <div className="contact-wrapper m-auto flex max-w-[90vw] flex-col items-center justify-center gap-8 md:max-w-[80vw] lg:flex-row">
         <Image
           src="/images/landing/gabriel-manciu.webp"
           alt="Contact"
@@ -16,19 +16,23 @@ export default function Contact({ className }: { className?: string }) {
         />
         <div>
           <h2
-            className={`${styles.title} font-display mb-8 text-4xl font-medium uppercase`}
+            className={`${styles.title} font-display mb-8 text-left text-4xl font-medium uppercase`}
           >
             Une opportunité &nbsp;?
           </h2>
-          <p className={`mb-4 max-w-[90vw] leading-[1.4] ${styles.content}`}>
+          <p
+            className={`mb-4 max-w-[90vw] leading-[1.4] ${styles.content} text-left`}
+          >
             Je suis actuellement à la recherche d’une nouvelle aventure en tant
             que développeur frontend junior dans la province de Namur ou en
             hybride.
           </p>
-          <p className={`mb-8 max-w-[90vw] leading-[1.4] ${styles.content}`}>
+          <p
+            className={`mb-8 max-w-[90vw] text-left leading-[1.4] ${styles.content}`}
+          >
             C’est un match ? Alors discutons en sur LinkedIn ou par mail.
           </p>
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center justify-start gap-4">
             <RollingLink
               href="https://www.linkedin.com/in/gabriel-manciu/"
               label="LinkedIn"

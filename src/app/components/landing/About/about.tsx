@@ -44,10 +44,9 @@ export default function About({ className = "" }: { className?: string }) {
   );
 
   return (
-    // mt-[-30%] afin de réduire le gap avec la section précédente
     <div
       ref={container}
-      className={`${className} about-wrapper mt-[-30%] h-screen items-center justify-center`}
+      className={`${className} about-wrapper h-screen items-center justify-center`}
       id="about"
     >
       <p
