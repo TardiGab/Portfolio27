@@ -12,25 +12,27 @@ export default async function ProjectsList() {
     "utf-8",
   );
 
-  const projects = await Promise.all(
-    fileNames.map(async (fileName) => {
-      const content = await fs.readFile(
-        path.join(process.cwd(), "src/app/case/(cases)", fileName),
-        "utf-8",
-      );
-      const { frontmatter } = await compileMDX<MDXType>({
-        source: content,
-        options: {
-          parseFrontmatter: true,
-        },
-      });
-      return {
-        fileName,
-        slug: fileName.replace(".mdx", ""),
-        ...frontmatter,
-      };
-    }),
-  );
+  const projects = (
+    await Promise.all(
+      fileNames.map(async (fileName) => {
+        const content = await fs.readFile(
+          path.join(process.cwd(), "src/app/case/(cases)", fileName),
+          "utf-8",
+        );
+        const { frontmatter } = await compileMDX<MDXType>({
+          source: content,
+          options: {
+            parseFrontmatter: true,
+          },
+        });
+        return {
+          fileName,
+          slug: fileName.replace(".mdx", ""),
+          ...frontmatter,
+        };
+      }),
+    )
+  ).sort((a, b) => Date.parse(b.date!) - Date.parse(a.date!));
   return (
     <ul className="sticky top-1/4 flex flex-col gap-40">
       {projects.map((project) => {

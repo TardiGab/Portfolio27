@@ -7,5 +7,6 @@ export interface MDXType {
   roles: string[];
   startDate: string;
   endDate: string;
+  date?: string;
   link: string;
 }
