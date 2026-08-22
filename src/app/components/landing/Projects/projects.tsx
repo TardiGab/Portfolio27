@@ -50,12 +50,12 @@ export default function Projects({
   return (
     <section className={`${className} min-h-[200vh] p-4 sm:p-28`}>
       <h2
-        className={`${styles.title} title font-display sticky top-28 inline-block overflow-hidden text-2xl leading-[.9] font-medium tracking-tight uppercase`}
+        className={`${styles.title} title font-display top-28 inline-block overflow-hidden text-2xl leading-[.9] font-medium tracking-tight uppercase md:sticky`}
         id={id || "projects"}
       >
         Mes fiertés
       </h2>
-      <div className="projects-container sticky top-1/4">{children}</div>
+      <div className="projects-container">{children}</div>
     </section>
   );
 }

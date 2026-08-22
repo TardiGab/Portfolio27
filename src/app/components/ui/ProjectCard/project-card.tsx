@@ -33,7 +33,7 @@ export default function ProjectCard({
 
   return (
     <Link
-      className={`${className || ""} ${styles.card} sticky top-1/4 grid h-full min-h-[65dvh] grid-cols-1 gap-6 rounded-4xl bg-[#350F13] p-4 transition-colors duration-300 hover:bg-[#350F13] sm:bg-[#0F0000] lg:min-h-0 lg:grid-cols-2`}
+      className={`${className || ""} ${styles.card} grid h-full min-h-[65dvh] grid-cols-1 gap-6 rounded-4xl bg-[#350F13] p-4 transition-colors duration-300 hover:bg-[#350F13] sm:bg-[#0F0000] lg:min-h-[300px] lg:grid-cols-2`}
       href={link || "#"}
       ref={card}
       data-cursor="project"
@@ -71,7 +71,7 @@ export default function ProjectCard({
           <div className={`${styles.type} mt-2 text-red-400 lowercase`}>
             {projectType || "Project Type"}
           </div>
-          <p className={`${styles.desc} mt-6 leading-[1.4]`}>
+          <p className={`mt-6 text-[1rem] leading-[1.4]`}>
             {description || "Project Description"}
           </p>
         </div>

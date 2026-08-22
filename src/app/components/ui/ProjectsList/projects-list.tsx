@@ -34,10 +34,10 @@ export default async function ProjectsList() {
     )
   ).sort((a, b) => Date.parse(b.date!) - Date.parse(a.date!));
   return (
-    <ul className="sticky top-1/4 flex flex-col gap-40">
+    <ul className="flex flex-col gap-10 md:gap-40">
       {projects.map((project) => {
         return (
-          <li key={project.slug} className="sticky top-1/4">
+          <li key={project.slug} className="md:sticky md:top-1/4">
             <ProjectsCard
               title={project.title}
               description={project.description}
