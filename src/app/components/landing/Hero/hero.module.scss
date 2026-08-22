@@ -8,11 +8,19 @@
 .right {
   div {
     div {
-      transition: font-weight 0.3s cubic-bezier(0.66, 0, 0.34, 1);
+      transition: font-weight 0.3s linear;
 
       &:hover {
         font-weight: 300;
       }
+
+      &:hover+div {
+        font-weight: 600;
+      }
+    }
+
+    div:has(+ div:hover) {
+      font-weight: 600;
     }
   }
 }
