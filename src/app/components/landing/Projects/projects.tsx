@@ -50,7 +50,7 @@ export default function Projects({
   return (
     <section className={`${className} min-h-[200vh] p-4 sm:p-28`}>
       <h2
-        className={`${styles.title} title font-display top-28 inline-block overflow-hidden text-2xl leading-[.9] font-medium tracking-tight uppercase md:sticky`}
+        className={`${styles.title} title font-display top-28 mb-8 inline-block overflow-hidden text-2xl leading-[.9] font-medium tracking-tight uppercase md:sticky`}
         id={id || "projects"}
       >
         Mes fiertés
