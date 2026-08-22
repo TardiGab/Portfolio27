@@ -42,7 +42,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Image: (props) => (
       <Image width={1920} height={1080} {...props} className="rounded-lg" />
     ),
-    Carousel: (props) => <Carousel images={props.images} alt={props.alt} />,
+    Carousel: (props) => (
+      <Carousel
+        images={props.images}
+        alt={props.alt}
+        slidesPerView={props.slidesPerView}
+      />
+    ),
     CaseImage: (props) => (
       <CaseImage
         src={props.src}

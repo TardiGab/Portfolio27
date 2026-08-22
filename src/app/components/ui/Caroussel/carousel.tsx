@@ -10,9 +10,11 @@ import Image from "next/image";
 export default function Carousel({
   images,
   alt,
+  slidesPerView = 2,
 }: {
   images: string;
   alt: string;
+  slidesPerView?: number;
 }) {
   const imageArray = images.split(",");
 
@@ -21,7 +23,13 @@ export default function Carousel({
   return (
     <>
       <Swiper
-        slidesPerView={2}
+        slidesPerView={1}
+        breakpoints={{
+          768: {
+            slidesPerView: slidesPerView,
+            spaceBetween: 16,
+          },
+        }}
         spaceBetween={16}
         loop={true}
         autoplay={{
