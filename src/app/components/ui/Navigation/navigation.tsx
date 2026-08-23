@@ -18,14 +18,27 @@ export function RollingButton({
   isOpen: boolean;
   onClick: () => void;
 }) {
+  const label = isOpen ? "Fermer" : "Menu";
+  const content = (
+    <span className="inline-flex items-center leading-[1.2]">
+      <span>{label}</span>
+    </span>
+  );
+
   return (
     <button
+      type="button"
       className={`${styles.button} ${className || ""}`}
-      data-label={isOpen ? "Fermer" : "Menu"}
+      data-label={label}
       aria-expanded={isOpen}
       onClick={onClick}
     >
-      <span className="inline-block">{isOpen ? "Fermer" : "Menu"}</span>
+      <span className={styles.wrapper}>
+        <span className={styles.row}>{content}</span>
+        <span className={styles.row} aria-hidden="true">
+          {content}
+        </span>
+      </span>
     </button>
   );
 }
@@ -168,10 +181,10 @@ export default function Navigation({ className }: { className?: string }) {
       className={`fixed top-8 left-1/2 z-50 origin-center -translate-x-1/2 rounded-3xl border border-gray-900 bg-black ${className || ""}`}
     >
       <div
-        className={`${styles.container} nav-panel flex w-[70vw] flex-col items-center justify-between overflow-hidden p-3 sm:w-[50vw] md:w-[50vw] lg:w-[50vw] xl:w-[20vw]`}
+        className={`${styles.container} nav-panel flex w-[70vw] flex-col items-center justify-between overflow-hidden sm:w-[50vw] md:w-[50vw] lg:w-[50vw] xl:w-[20vw]`}
       >
         <div className="flex w-full items-center justify-between gap-2">
-          <div className="left flex items-center gap-1">
+          <div className="left flex items-center gap-1 p-3">
             <Image
               src="/images/logo.svg"
               alt="Logo"
@@ -185,12 +198,12 @@ export default function Navigation({ className }: { className?: string }) {
             <RollingButton
               isOpen={isOpen}
               onClick={() => toggleMenu(false)}
-              className="relative inline-block cursor-pointer overflow-hidden"
+              className="p-3"
             />
           </div>
         </div>
-        <nav className="nav-element w-full">
-          <ul className="flex flex-col justify-center gap-2 pt-4 text-xs sm:flex-row sm:items-end">
+        <nav className="nav-element w-full p-3">
+          <ul className="flex flex-col justify-center gap-2 text-xs sm:flex-row sm:items-end">
             <li className="w-full">
               <a
                 href="/#projects"
