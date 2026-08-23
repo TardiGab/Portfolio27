@@ -80,7 +80,7 @@ export default function Navigation({ className }: { className?: string }) {
                       ? "90vw"
                       : "90vw",
                 duration: 0.5,
-                ease: "back.inOut(1)",
+                ease: "power3.inOut",
               },
               "-=0.5",
             )
@@ -89,7 +89,7 @@ export default function Navigation({ className }: { className?: string }) {
               {
                 height: "auto",
                 duration: 0.5,
-                ease: "back.inOut(1)",
+                ease: "power3.inOut",
               },
               "-=0.2",
             )
@@ -103,7 +103,7 @@ export default function Navigation({ className }: { className?: string }) {
                   each: isDesktop ? 0.03 : 0.05,
                   from: isMobile ? "end" : "start",
                 },
-                ease: isDesktop ? "back.inOut(1.5)" : "back.inOut(.5)",
+                ease: isDesktop ? "power3.inOut(1.5)" : "power3.inOut(.5)",
               },
               isDesktop ? "-=0.3" : "-=0.6",
             );
@@ -125,7 +125,7 @@ export default function Navigation({ className }: { className?: string }) {
             .to(".nav-panel", {
               height: "50px",
               duration: 0.5,
-              ease: "back.inOut(1)",
+              ease: "power3.inOut",
             })
             .to(
               ".nav-element ul li",
@@ -137,7 +137,7 @@ export default function Navigation({ className }: { className?: string }) {
                   each: isDesktop ? 0.03 : 0.05,
                   from: "end",
                 },
-                ease: isDesktop ? "back.inOut(1.5)" : "back.inOut(.5)",
+                ease: isDesktop ? "power3.inOut(1.5)" : "power3.inOut(.5)",
               },
               "-=0.5",
             )
@@ -152,7 +152,7 @@ export default function Navigation({ className }: { className?: string }) {
                       ? "50vw"
                       : "70vw",
                 duration: 0.5,
-                ease: "back.inOut(1)",
+                ease: "power3.inOut",
               },
               "-=0.2",
             );
