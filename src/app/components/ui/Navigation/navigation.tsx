@@ -6,6 +6,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -184,7 +185,10 @@ export default function Navigation({ className }: { className?: string }) {
         className={`${styles.container} nav-panel flex w-[70vw] flex-col items-center justify-between overflow-hidden sm:w-[50vw] md:w-[50vw] lg:w-[50vw] xl:w-[20vw]`}
       >
         <div className="flex w-full items-center justify-between gap-2">
-          <div className="left flex items-center gap-1 p-3">
+          <Link
+            href="/"
+            className="left flex items-center gap-1 p-3 transition-opacity duration-300 hover:opacity-70"
+          >
             <Image
               src="/images/logo.svg"
               alt="Logo"
@@ -193,7 +197,7 @@ export default function Navigation({ className }: { className?: string }) {
               fetchPriority="high"
             />
             <span className="hidden sm:inline">Gabriel Manciu</span>
-          </div>
+          </Link>
           <div className="flex">
             <RollingButton
               isOpen={isOpen}
