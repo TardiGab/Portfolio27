@@ -18,20 +18,8 @@
 
 ## 📖 Sommaire
 
-- [À propos](#-à-propos)
 - [Stack Technique](#-stack-technique)
 - [Contact](#-contact)
-
----
-
-## 🎯 À propos
-
-Ce projet est mon site portfolio. Il a pour but de :
-
-- Présenter mon parcours, mes compétences et mon profil de **développeur frontend**.
-- Exposer mes **projets clés** avec des fiches détaillées et des **études de cas complètes** rédigées en MDX (contexte, rôle, stack, défis techniques, solutions et résultats).
-- Offrir une expérience utilisateur soignée grâce à des **animations fluides** (GSAP, ScrollTrigger, SplitText) et des **micro-interactions personnalisées**.
-- Faciliter la prise de contact pour de nouvelles opportunités professionnelles.
 
 ---
 
