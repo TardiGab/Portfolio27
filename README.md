@@ -39,7 +39,7 @@ Ce projet est mon site portfolio. Il a pour but de :
 
 ### Core & Framework
 
-- **[Next.js 16](https://nextjs.org/)** (App Router, Server Components & Static Site Generation)
+- **[Next.js 16](https://nextjs.org/)**
 - **[React 19](https://react.dev/)**
 - **[TypeScript](https://www.typescriptlang.org/)**
 
