@@ -9,7 +9,7 @@ import Image from "next/image";
 import Carousel from "../ui/Caroussel/carousel";
 import CaseImage from "../ui/CaseImage/case-image";
 
-export function useMDXComponents(components: MDXComponents): MDXComponents {
+export function getMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: (props) => (
       <h1
@@ -40,7 +40,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ArrowOutwards: (props) => <ArrowOutwards {...props} />,
     ArrowBack: (props) => <ArrowBack {...props} />,
     Image: (props) => (
-      <Image width={1920} height={1080} {...props} className="rounded-lg" />
+      <Image
+        width={1920}
+        height={1080}
+        {...props}
+        className="rounded-lg"
+        alt={props.alt}
+      />
     ),
     Carousel: (props) => (
       <Carousel

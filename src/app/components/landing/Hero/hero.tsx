@@ -18,11 +18,11 @@ export default function Hero({
 
   useGSAP(() => {
     // gsap code here...
-    let gabriel = SplitText.create(".gabriel", { type: "words, chars" });
-    let manciu = SplitText.create(".manciu", { type: "words, chars" });
-    let role = SplitText.create(".role", { type: "words" });
-    let location = SplitText.create(".location", { type: "words" });
-    let coords = SplitText.create(".coords", { type: "words" });
+    const gabriel = SplitText.create(".gabriel", { type: "words, chars" });
+    const manciu = SplitText.create(".manciu", { type: "words, chars" });
+    const role = SplitText.create(".role", { type: "words" });
+    const location = SplitText.create(".location", { type: "words" });
+    const coords = SplitText.create(".coords", { type: "words" });
 
     gsap
       .timeline()

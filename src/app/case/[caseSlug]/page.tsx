@@ -2,14 +2,12 @@ import { promises as fs } from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import type { MDXType } from "@/src/types/mdx";
-import { useMDXComponents } from "@/src/app/components/mdx/mdx-components";
+import { getMDXComponents } from "@/src/app/components/mdx/mdx-components";
 
 import styles from "./page.module.scss";
 import Image from "next/image";
 import ArrowRight from "../../components/icons/arrow-right";
 import RollingLink from "../../components/ui/RollingLink/rolling-link";
-import ArrowOutwards from "../../components/icons/arrow-outwards";
-import ArrowBack from "../../components/icons/arrow-back";
 
 type CaseStudyPageProps = {
   params: Promise<{ caseSlug: string }>;
@@ -43,7 +41,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     options: {
       parseFrontmatter: true,
     },
-    components: useMDXComponents({}),
+    components: getMDXComponents({}),
   });
   return (
     <article

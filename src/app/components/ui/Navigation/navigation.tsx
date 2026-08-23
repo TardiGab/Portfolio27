@@ -119,12 +119,12 @@ export default function Navigation({ className }: { className?: string }) {
           isTablet: "(min-width: 768px) and (max-width: 1024px)",
         },
         (context) => {
-          const { isDesktop, isMobile, isTablet, isLargeDesktop } =
+          const { isDesktop, isTablet, isLargeDesktop } =
             context.conditions ?? {};
           gsap
             .timeline()
             .to(".nav-panel", {
-              height: "50px",
+              height: "48px",
               duration: 0.5,
               ease: "power3.inOut",
             })
@@ -187,7 +187,7 @@ export default function Navigation({ className }: { className?: string }) {
         <div className="flex w-full items-center justify-between gap-2">
           <Link
             href="/"
-            className="left flex items-center gap-1 p-3 transition-opacity duration-300 hover:opacity-70"
+            className="left flex items-center gap-1 p-3.5 transition-opacity duration-300 hover:opacity-70 sm:p-3"
           >
             <Image
               src="/images/logo.svg"
@@ -209,7 +209,7 @@ export default function Navigation({ className }: { className?: string }) {
         <nav className="nav-element w-full p-3">
           <ul className="flex flex-col justify-center gap-2 text-xs sm:flex-row sm:items-end">
             <li className="w-full">
-              <a
+              <Link
                 href="/#projects"
                 onClick={(e) => handleLinkClick(e, "#projects")}
                 className="flex flex-col rounded-2xl border border-red-700 bg-red-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
@@ -218,10 +218,10 @@ export default function Navigation({ className }: { className?: string }) {
                   Projets
                 </span>{" "}
                 <span className="opacity-80">Ce dont je suis fier</span>
-              </a>
+              </Link>
             </li>
             <li className="w-full">
-              <a
+              <Link
                 href="/#about"
                 onClick={(e) => handleLinkClick(e, "#about")}
                 className="flex flex-col rounded-2xl border border-blue-700 bg-blue-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
@@ -230,10 +230,10 @@ export default function Navigation({ className }: { className?: string }) {
                   À propos
                 </span>{" "}
                 <span className="opacity-80">Apprenez à me connaître</span>
-              </a>
+              </Link>
             </li>
             <li className="w-full">
-              <a
+              <Link
                 href="/#contact"
                 onClick={(e) => handleLinkClick(e, "#contact")}
                 className="flex flex-col rounded-2xl border border-green-700 bg-green-950 p-3 pt-[20%] opacity-50 transition-opacity duration-300 hover:opacity-100"
@@ -242,7 +242,7 @@ export default function Navigation({ className }: { className?: string }) {
                   Contact
                 </span>{" "}
                 <span className="opacity-80">Discutons ensemble</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

@@ -3,12 +3,7 @@
 import Image from "next/image";
 import styles from "./project-card.module.scss";
 import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectCard({
   className,

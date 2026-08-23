@@ -44,7 +44,9 @@ export default function Carousel({
       >
         {imageArray.map((image, index) => (
           <SwiperSlide key={index}>
-            <img
+            <Image
+              height={1080}
+              width={1920}
               src={image}
               alt={alt}
               className="rounded-lg"

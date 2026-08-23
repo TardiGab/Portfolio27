@@ -20,7 +20,7 @@ export default function Projects({
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
-    let title = SplitText.create(".title", { type: "words" });
+    const title = SplitText.create(".title", { type: "words" });
 
     gsap.from(title.words, {
       scrollTrigger: {
