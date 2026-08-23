@@ -17,24 +17,16 @@ export default function CustomCursor() {
         ease: "linear",
       });
 
-      window.addEventListener("mousemove", (e) => {
-        if (!cursor.current) {
-          return;
-        }
-        gsap.to(cursor.current, {
-          x: e.clientX - cursor.current.offsetWidth / 2,
-          y: e.clientY - cursor.current.offsetHeight / 2,
-          duration: 0.2,
-          ease: "power3.out",
-        });
+      let mousePos = { x: -1, y: -1 };
 
-        const target = e.target as HTMLElement;
+      const updateCursorState = (x: number, y: number) => {
+        if (!cursor.current || x < 0 || y < 0) return;
 
-        const hoveredElement = target.closest("[data-cursor]");
+        const target = document.elementFromPoint(x, y);
+        const hoveredElement = target?.closest("[data-cursor]");
 
         if (hoveredElement) {
           const type = hoveredElement.getAttribute("data-cursor");
-          console.log(type);
           if (type === "project") {
             gsap.to(cursor.current, {
               opacity: 1,
@@ -42,16 +34,59 @@ export default function CustomCursor() {
               duration: 0.2,
               ease: "power2.out",
             });
+            return;
           }
-        } else {
-          gsap.to(cursor.current, {
-            opacity: 0,
-            scale: 0,
-            duration: 0.2,
-            ease: "power2.out",
-          });
         }
-      });
+
+        gsap.to(cursor.current, {
+          opacity: 0,
+          scale: 0,
+          duration: 0.2,
+          ease: "power2.out",
+        });
+      };
+
+      const handleMouseMove = (e: MouseEvent) => {
+        mousePos = { x: e.clientX, y: e.clientY };
+
+        if (!cursor.current) {
+          return;
+        }
+
+        gsap.to(cursor.current, {
+          x: e.clientX - cursor.current.offsetWidth / 2,
+          y: e.clientY - cursor.current.offsetHeight / 2,
+          duration: 0.2,
+          ease: "power3.out",
+        });
+
+        updateCursorState(e.clientX, e.clientY);
+      };
+
+      const handleScroll = () => {
+        updateCursorState(mousePos.x, mousePos.y);
+      };
+
+      const handleMouseLeave = () => {
+        mousePos = { x: -1, y: -1 };
+        if (!cursor.current) return;
+        gsap.to(cursor.current, {
+          opacity: 0,
+          scale: 0,
+          duration: 0.2,
+          ease: "power2.out",
+        });
+      };
+
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      document.addEventListener("mouseleave", handleMouseLeave);
+
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("scroll", handleScroll);
+        document.removeEventListener("mouseleave", handleMouseLeave);
+      };
     },
     { scope: cursor },
   );

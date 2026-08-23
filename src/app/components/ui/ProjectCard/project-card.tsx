@@ -33,7 +33,7 @@ export default function ProjectCard({
 
   return (
     <Link
-      className={`${className || ""} ${styles.card} grid h-full min-h-[65dvh] grid-cols-1 gap-6 rounded-4xl bg-[#350F13] p-4 transition-colors duration-300 hover:bg-[#350F13] sm:bg-[#0F0000] lg:min-h-[300px] lg:grid-cols-2`}
+      className={`${className || ""} ${styles.card} grid h-full min-h-[65dvh] grid-cols-1 gap-6 rounded-4xl bg-[#350F13] p-4 transition-colors duration-300 hover:bg-[#350F13] sm:bg-[#0F0000] lg:min-h-75 lg:grid-cols-2`}
       href={link || "#"}
       ref={card}
       data-cursor="project"
