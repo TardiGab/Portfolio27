@@ -9,11 +9,15 @@ import Image from "next/image";
 import ArrowRight from "../../components/icons/arrow-right";
 import RollingLink from "../../components/ui/RollingLink/rolling-link";
 
+import type { Metadata } from "next";
+
 type CaseStudyPageProps = {
   params: Promise<{ caseSlug: string }>;
 };
 
-export async function generateMetadata({ params }: CaseStudyPageProps) {
+export async function generateMetadata({
+  params,
+}: CaseStudyPageProps): Promise<Metadata> {
   const { caseSlug } = await params;
   const content = await fs.readFile(
     path.join(process.cwd(), "src/app/case/(cases)", `${caseSlug}.mdx`),
@@ -25,8 +29,36 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
       parseFrontmatter: true,
     },
   });
+
+  const title = frontmatter.title;
+  const description =
+    frontmatter.description ||
+    `Étude de cas du projet ${title} (${frontmatter.projectType}) par Gabriel Manciu.`;
+  const image = `/images/case/${caseSlug}/${caseSlug}.webp`;
+
   return {
-    title: frontmatter.title,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      url: `/case/${caseSlug}`,
+      images: [
+        {
+          url: image,
+          width: 1920,
+          height: 1080,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
   };
 }
 

@@ -2,9 +2,23 @@ import { promises as fs } from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
 
+import type { Metadata } from "next";
 import type { MDXType } from "@/src/types/mdx";
 
 import ProjectsCard from "@/src/app/components/ui/ProjectCard/project-card";
+
+export const metadata: Metadata = {
+  title: "Études de cas & Projets",
+  description:
+    "Découvrez les différents projets et études de cas réalisés par Gabriel Manciu, développeur frontend junior.",
+  openGraph: {
+    title: "Études de cas & Projets | Gabriel Manciu",
+    description:
+      "Découvrez les différents projets et études de cas réalisés par Gabriel Manciu, développeur frontend junior.",
+    url: "/case",
+  },
+  robots: { index: false, follow: false },
+};
 
 export default async function Projects() {
   const fileNames = await fs.readdir(

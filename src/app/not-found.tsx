@@ -5,6 +5,10 @@ import RollingLink from "./components/ui/RollingLink/rolling-link";
 
 export const metadata: Metadata = {
   title: "Oups ! Vous semblez perdu ?",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function NotFound() {
