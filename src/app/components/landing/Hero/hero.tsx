@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import RollingLink from "../../ui/RollingLink/rolling-link";
+import ChevronDown from "../../icons/chevron-down";
 
 export default function Hero({
   className,
@@ -76,6 +77,16 @@ export default function Hero({
           ease: "back.inOut(2)",
         },
         "-=1",
+      )
+      .from(
+        ".chevron",
+        {
+          yPercent: 100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "back.inOut(2)",
+        },
+        "-=0.8",
       );
   });
   return (
@@ -109,18 +120,21 @@ export default function Hero({
       >
         Développeur frontend
       </span>
-      <div className="bottom absolute bottom-0 flex w-full flex-col justify-between gap-2 p-8 sm:flex-row">
-        <span
-          className={`location inline-block overflow-hidden font-sans text-base`}
-        >
-          Basé à <span className="text-blue-300">Dinant</span>, Belgique
-        </span>
-        <RollingLink
-          href="https://maps.app.goo.gl/SAcuGtGvVvqohwzb7"
-          target="_blank"
-          label="50°15′42″N, 4°54′48″E"
-          className="coords"
-        />
+      <div className="bottom absolute bottom-0 w-full">
+        <div className="relative flex w-full flex-col justify-between gap-2 p-8 sm:flex-row">
+          <span
+            className={`location inline-block overflow-hidden font-sans text-base`}
+          >
+            Basé à <span className="text-blue-300">Dinant</span>, Belgique
+          </span>
+          <ChevronDown className="chevron absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform text-4xl" />
+          <RollingLink
+            href="https://maps.app.goo.gl/SAcuGtGvVvqohwzb7"
+            target="_blank"
+            label="50°15′42″N, 4°54′48″E"
+            className="coords"
+          />
+        </div>
       </div>
     </div>
   );
