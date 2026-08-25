@@ -127,7 +127,7 @@ export default function Hero({
           >
             Basé à <span className="text-blue-300">Dinant</span>, Belgique
           </span>
-          <ChevronDown className="chevron absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform text-4xl" />
+          <ChevronDown className="chevron absolute top-1 left-1/2 -translate-x-1/2 -translate-y-1/2 transform text-4xl sm:top-1/2" />
           <RollingLink
             href="https://maps.app.goo.gl/SAcuGtGvVvqohwzb7"
             target="_blank"
