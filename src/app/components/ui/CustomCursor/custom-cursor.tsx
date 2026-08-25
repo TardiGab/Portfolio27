@@ -31,7 +31,7 @@ export default function CustomCursor() {
             gsap.to(cursor.current, {
               opacity: 1,
               scale: 1,
-              duration: 0.2,
+              duration: 0.5,
               ease: "power2.out",
             });
             return;
@@ -41,7 +41,7 @@ export default function CustomCursor() {
         gsap.to(cursor.current, {
           opacity: 0,
           scale: 0,
-          duration: 0.2,
+          duration: 0.5,
           ease: "power2.out",
         });
       };
@@ -73,7 +73,7 @@ export default function CustomCursor() {
         gsap.to(cursor.current, {
           opacity: 0,
           scale: 0,
-          duration: 0.2,
+          duration: 0.5,
           ease: "power2.out",
         });
       };
