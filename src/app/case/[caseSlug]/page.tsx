@@ -93,7 +93,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         <Image
           src={`/images/case/${caseSlug}/${caseSlug}.webp`}
           alt={data.frontmatter.title}
-          className="mt-16 mb-8 h-auto w-full rounded-2xl object-cover"
+          className="mt-8 mb-8 h-auto w-full rounded-2xl object-cover lg:mt-16"
           width={1920}
           height={1080}
         />
