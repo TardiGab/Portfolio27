@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Lexend } from "next/font/google";
 import ClashDisplay from "next/font/local";
@@ -36,10 +36,24 @@ export const metadata: Metadata = {
     "Frontend Developer",
     "Web Developer",
     "React",
-    "Next.js",
     "TypeScript",
     "JavaScript",
     "UI/UX",
+    "Vue.js",
+    "Nuxt.js",
+    "Web Design",
+    "Web Development",
+    "Responsive Design",
+    "Web Applications",
+    "User Interface",
+    "User Experience",
+    "Développeur Web",
+    "Développement Web",
+    "Design d'Interface",
+    "Expérience Utilisateur",
+    "Développeur frontend",
+    "Développeur frontend Vue.js",
+    "Design web",
   ],
   alternates: {
     canonical: "/",
@@ -79,6 +93,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0e3258",
 };
 
 export default function RootLayout({
