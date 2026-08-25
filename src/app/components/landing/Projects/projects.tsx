@@ -42,7 +42,7 @@ export default function Projects({
       },
       opacity: 0,
       yPercent: 5,
-      duration: 0.5,
+      duration: 0.7,
       ease: "back.inOut(2)",
     });
   });
