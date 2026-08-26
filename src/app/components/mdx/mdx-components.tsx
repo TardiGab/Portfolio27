@@ -19,7 +19,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     ),
     h2: (props) => (
       <h2
-        className={` ${styles.h2} font-display mt-8 mb-6 leading-[.9] font-medium uppercase md:mt-14 md:mb-10`}
+        className={` ${styles.h2} font-display mt-12 mb-6 leading-[.9] font-medium uppercase md:mt-14 md:mb-10`}
         {...props}
       />
     ),
