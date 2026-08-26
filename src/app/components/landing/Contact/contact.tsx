@@ -39,6 +39,7 @@ export default function Contact({ className }: { className?: string }) {
               arrow="outwards"
               iconPosition="right"
               className={`${styles.links} font-display font-medium uppercase`}
+              target="_blank"
             />
             <span className="hidden text-4xl text-gray-400 md:inline-block">
               •
@@ -51,7 +52,6 @@ export default function Contact({ className }: { className?: string }) {
                 </>
               }
               className={`${styles.links} font-display font-medium uppercase`}
-              target="_blank"
             />
           </div>
         </div>
