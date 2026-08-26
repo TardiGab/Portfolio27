@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Footer from "./components/ui/Footer/footer";
 import Navigation from "./components/ui/Navigation/navigation";
 import RollingLink from "./components/ui/RollingLink/rolling-link";
+import CaseLayoutWrapper from "./components/case/CaseLayoutWrapper/case-layout-wrapper";
 
 export const metadata: Metadata = {
   title: "Oups ! Vous semblez perdu ?",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <>
+    <CaseLayoutWrapper>
       <header>
         <Navigation className="navigation" />
       </header>
@@ -61,6 +62,6 @@ export default function NotFound() {
         </div>
       </main>
       <Footer className="footer" />
-    </>
+    </CaseLayoutWrapper>
   );
 }
