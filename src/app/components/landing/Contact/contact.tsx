@@ -51,6 +51,7 @@ export default function Contact({ className }: { className?: string }) {
                 </>
               }
               className={`${styles.links} font-display font-medium uppercase`}
+              target="_blank"
             />
           </div>
         </div>
