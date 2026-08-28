@@ -7,10 +7,10 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const COLORS = {
-  base: "radial-gradient(75% 15% at 50% 100%, #0e3258 0%, #040915 100%)",
-  projects: "radial-gradient(75% 15% at 50% 100%, #6B0000 0%, #0F0000 100%)",
-  about: "radial-gradient(75% 15% at 50% 100%, #0e3258 0%, #040915 100%)",
-  contact: "radial-gradient(75% 15% at 50% 100%, #0E581E 0%, #020D07 100%)",
+  base: "radial-gradient(75% 15% at 50% 0%, #0e3258 0%, #040915 100%)",
+  projects: "radial-gradient(75% 15% at 50% 0%, #6B0000 0%, #0F0000 100%)",
+  about: "radial-gradient(75% 15% at 50% 0%, #0e3258 0%, #040915 100%)",
+  contact: "radial-gradient(75% 15% at 50% 0%, #0E581E 0%, #020D07 100%)",
 };
 
 export default function LandingWrapper({

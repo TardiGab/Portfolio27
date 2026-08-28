@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Lexend } from "next/font/google";
 import ClashDisplay from "next/font/local";
+import { ViewTransition } from "react";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -105,12 +106,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="fr"
-      className={`h-full antialiased ${clashDisplay.variable} ${lexend.variable}`}
-      data-scroll-behavior="smooth"
-    >
-      <body>{children}</body>
-    </html>
+    <ViewTransition enter="fade-in" exit="fade-out">
+      <html
+        lang="fr"
+        className={`h-full antialiased ${clashDisplay.variable} ${lexend.variable}`}
+        data-scroll-behavior="smooth"
+      >
+        <body>
+          <div className="background fixed top-0 left-0 z-0 h-screen w-full"></div>
+          {children}
+        </body>
+      </html>
+    </ViewTransition>
   );
 }

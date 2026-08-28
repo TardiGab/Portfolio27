@@ -15,7 +15,6 @@ export default function Home() {
         <Navigation className="navigation" />
       </header>
       <main className="relative">
-        <div className="background fixed top-0 left-0 z-0 h-screen w-full"></div>
         <CustomCursor />
         <div className="relative z-10">
           <Hero />

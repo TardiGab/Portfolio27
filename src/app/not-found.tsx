@@ -19,7 +19,6 @@ export default function NotFound() {
         <Navigation className="navigation" />
       </header>
       <main>
-        <div className="background fixed top-0 left-0 z-0 h-screen w-full"></div>
         <div className="pointer-events-none absolute top-0 left-0 z-0 flex h-screen w-full translate-y-[60%] flex-col lg:translate-y-[-50%]">
           <span
             aria-hidden="true"

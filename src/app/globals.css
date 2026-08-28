@@ -36,10 +36,9 @@ body {
 }
 
 .background {
-  background: radial-gradient(75% 15% at 50% 100%,
+  background: radial-gradient(75% 15% at 50% 0%,
       #0e3258 0%,
       #040915 100%);
-  rotate: 180deg;
 }
 
 .main-size {
@@ -64,3 +63,35 @@ body {
 .back-404 {
   font-size: clamp(1.4375rem, 1.0625rem + 1.875vw, 2.75rem);
 }
+
+::view-transition-group(*) {
+  animation-duration: .5s;
+}
+
+/* ::view-transition-old(.fade-out) {
+  animation: fade-out 0.4s ease-out both;
+}
+
+::view-transition-new(.fade-in) {
+  animation: fade-in 0.4s ease-out both;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+} */
