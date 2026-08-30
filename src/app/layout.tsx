@@ -21,20 +21,20 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://gabriel-manciu.be";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Gabriel Manciu • Développeur Frontend",
-    template: "%s | Gabriel Manciu • Développeur Frontend",
+    default: "Gabriel Manciu • Développeur Front-end",
+    template: "%s | Gabriel Manciu • Développeur Front-end",
   },
   description:
-    "Explorez mon portfolio et découvrez mes projets en tant que développeur frontend. Je transforme des maquettes créatives en expériences web soignées.",
+    "Explorez mon portfolio et découvrez mes projets en tant que développeur front-end. Je transforme des maquettes créatives en expériences web soignées.",
   applicationName: "Gabriel Manciu Portfolio",
   authors: [{ name: "Gabriel Manciu", url: siteUrl }],
   creator: "Gabriel Manciu",
   publisher: "Gabriel Manciu",
   keywords: [
     "Gabriel Manciu",
-    "Développeur Frontend",
+    "Développeur Front-end",
     "Portfolio",
-    "Frontend Developer",
+    "Front-end Developer",
     "Web Developer",
     "React",
     "TypeScript",
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     "Développement Web",
     "Design d'Interface",
     "Expérience Utilisateur",
-    "Développeur frontend",
-    "Développeur frontend Vue.js",
+    "Développeur front-end",
+    "Développeur front-end Vue.js",
     "Design web",
   ],
   alternates: {
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: siteUrl,
-    title: "Gabriel Manciu • Développeur Frontend",
+    title: "Gabriel Manciu • Développeur Front-end",
     description:
-      "Explorez mon portfolio et découvrez mes projets en tant que développeur frontend. Je transforme des maquettes créatives en expériences web soignées.",
+      "Explorez mon portfolio et découvrez mes projets en tant que développeur front-end. Je transforme des maquettes créatives en expériences web soignées.",
     siteName: "Gabriel Manciu • Portfolio",
     images: [
       {
@@ -78,9 +78,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gabriel Manciu • Développeur Frontend",
+    title: "Gabriel Manciu • Développeur Front-end",
     description:
-      "Explorez mon portfolio et découvrez mes projets en tant que développeur frontend. Je transforme des maquettes créatives en expériences web soignées.",
+      "Explorez mon portfolio et découvrez mes projets en tant que développeur front-end. Je transforme des maquettes créatives en expériences web soignées.",
     images: ["/images/gabriel-manciu-portfolio.png"],
   },
   robots: {

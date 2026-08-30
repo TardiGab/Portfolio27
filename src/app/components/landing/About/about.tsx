@@ -52,7 +52,7 @@ export default function About({ className = "" }: { className?: string }) {
       <p
         className={`${styles.text} about-text font-display m-auto max-w-[90vw] leading-[1.2] uppercase`}
       >
-        Je suis un développeur frontend junior basé dans la province de Namur,
+        Je suis un développeur front-end junior basé dans la province de Namur,
         en Belgique. Je transforme des maquettes créatives en expériences web
         soignées.
       </p>

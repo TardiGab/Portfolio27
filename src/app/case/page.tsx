@@ -10,11 +10,11 @@ import ProjectsCard from "@/src/app/components/ui/ProjectCard/project-card";
 export const metadata: Metadata = {
   title: "Études de cas & Projets",
   description:
-    "Découvrez les différents projets et études de cas réalisés par Gabriel Manciu, développeur frontend junior.",
+    "Découvrez les différents projets et études de cas réalisés par Gabriel Manciu, développeur front-end junior.",
   openGraph: {
     title: "Études de cas & Projets | Gabriel Manciu",
     description:
-      "Découvrez les différents projets et études de cas réalisés par Gabriel Manciu, développeur frontend junior.",
+      "Découvrez les différents projets et études de cas réalisés par Gabriel Manciu, développeur front-end junior.",
     url: "/case",
   },
   robots: { index: false, follow: false },

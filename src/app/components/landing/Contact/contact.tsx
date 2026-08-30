@@ -24,7 +24,7 @@ export default function Contact({ className }: { className?: string }) {
             className={`mb-4 max-w-[90vw] leading-[1.4] ${styles.content} text-left`}
           >
             Je suis actuellement à la recherche d’une nouvelle aventure en tant
-            que développeur frontend junior dans la province de Namur ou en
+            que développeur front-end junior dans la province de Namur ou en
             hybride.
           </p>
           <p

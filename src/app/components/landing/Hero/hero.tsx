@@ -118,7 +118,7 @@ export default function Hero({
       <span
         className={`${styles.role} role inline-block overflow-hidden text-center text-blue-300 lowercase`}
       >
-        Développeur frontend
+        Développeur front-end
       </span>
       <div className="bottom absolute bottom-0 w-full">
         <div className="relative flex w-full flex-col justify-between gap-2 p-8 sm:flex-row">

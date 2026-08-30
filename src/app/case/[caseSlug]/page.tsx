@@ -30,7 +30,7 @@ export async function generateMetadata({
     },
   });
 
-  const title = `${frontmatter.title} | Gabriel Manciu • Développeur Frontend`;
+  const title = `${frontmatter.title} | Gabriel Manciu • Développeur Front-end`;
   const description =
     frontmatter.description ||
     `Étude de cas du projet ${title} (${frontmatter.projectType}) par Gabriel Manciu.`;
