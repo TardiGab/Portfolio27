@@ -10,36 +10,36 @@ export default function Footer({ className }: { className?: string }) {
       <div className="flex flex-col justify-between md:flex-row md:items-end">
         <div className="flex flex-col gap-6 md:flex-row">
           <div>
-            <h4 className="font-display mb-3 text-2xl font-medium text-gray-300 uppercase md:mb-4">
+            <h4 className="font-display mb-3 text-2xl font-medium uppercase md:mb-4">
               Navigation
             </h4>
             <nav>
               <ul>
-                <li className="mb-2 text-xl">
+                <li className="mb-2 text-xl text-gray-400">
                   <RollingLink href="/#about" label="À propos" />
                 </li>
-                <li className="mb-2 text-xl">
+                <li className="mb-2 text-xl text-gray-400">
                   <RollingLink href="/#projets" label="Projets" />
                 </li>
-                <li className="text-xl">
+                <li className="text-xl text-gray-400">
                   <RollingLink href="/#contact" label="Contact" />
                 </li>
               </ul>
             </nav>
           </div>
           <div>
-            <h4 className="font-display mb-3 text-2xl font-medium text-gray-300 uppercase md:mb-4">
+            <h4 className="font-display mb-3 text-2xl font-medium uppercase md:mb-4">
               Liens
             </h4>
             <nav>
               <ul>
-                <li className="mb-2 text-xl">
+                <li className="mb-2 text-xl text-gray-400">
                   <RollingLink
                     href="mailto:gabriel@manciu.be"
                     label="gabriel@manciu.be"
                   />
                 </li>
-                <li className="mb-2 text-xl">
+                <li className="mb-2 text-xl text-gray-400">
                   <RollingLink
                     href="https://github.com/TardiGab"
                     label="Github"
@@ -48,7 +48,7 @@ export default function Footer({ className }: { className?: string }) {
                     target="_blank"
                   />
                 </li>
-                <li className="text-xl">
+                <li className="text-xl text-gray-400">
                   <RollingLink
                     href="https://www.linkedin.com/in/gabriel-manciu/"
                     label="LinkedIn"
