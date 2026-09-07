@@ -8,6 +8,7 @@ import styles from "./page.module.scss";
 import Image from "next/image";
 import ArrowRight from "../../components/icons/arrow-right";
 import RollingLink from "../../components/ui/RollingLink/rolling-link";
+import BackButton from "../../components/ui/BackButton/back-button";
 
 import type { Metadata } from "next";
 
@@ -150,13 +151,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               className={`${styles.case__cta} font-display font-medium uppercase *:text-blue-300 *:**:leading-none *:**:text-nowrap`}
               color="var(--color-blue-300)"
             />
-            <RollingLink
-              label="Retour"
-              href="/"
-              arrow="back"
-              iconPosition="right"
+            <BackButton
               className={`${styles.case__cta} font-display font-medium text-neutral-50 uppercase *:**:leading-none *:**:text-nowrap`}
-              color="var(--color-neutral-50)"
             />
           </div>
         </div>

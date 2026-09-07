@@ -10,7 +10,7 @@ import Link from "next/link";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-export function RollingButton({
+function RollingButton({
   className,
   isOpen,
   onClick,

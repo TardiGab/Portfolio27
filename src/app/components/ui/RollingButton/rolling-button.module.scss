@@ -1,0 +1,37 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .wrapper {
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+    line-height: 1;
+  }
+
+  .row {
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.5s cubic-bezier(.8, 0, 0, .8);
+    line-height: 1;
+  }
+
+  .row[aria-hidden="true"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(120%);
+  }
+
+  &:hover {
+    .row {
+      transform: translateY(-120%);
+    }
+
+    .row[aria-hidden="true"] {
+      transform: translateY(0);
+    }
+  }
+}

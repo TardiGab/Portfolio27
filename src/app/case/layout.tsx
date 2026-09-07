@@ -1,4 +1,3 @@
-import { ViewTransition } from "react";
 import CaseLayoutWrapper from "../components/case/CaseLayoutWrapper/case-layout-wrapper";
 import Footer from "../components/ui/Footer/footer";
 import Navigation from "../components/ui/Navigation/navigation";
